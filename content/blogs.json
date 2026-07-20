@@ -33,21 +33,5 @@
     "status": "published",
     "featured": true,
     "content": "# What Mountains Taught Me About Models\n\nOn a ridge, weather shifts faster than dashboards. You pack layers. You turn around when pride argues with risk.\n\n## Pack for failure modes\n\nModels fail. Networks fail. Humans get tired. Design fallbacks before you need them.\n\n## Respect the environment\n\nTraining metrics are not the trail. Production data is the weather.\n\n## Move slow to go far\n\nSmall, honest iterations beat heroic overnight climbs."
-  },
-  {
-    "id": "b3",
-    "slug": "scraping-with-respect",
-    "title": "Scraping with Respect",
-    "excerpt": "Automation can be polite. Here's how I think about rate limits, robots.txt, and long-term access.",
-    "date": "2024-11-22",
-    "category": "Engineering",
-    "tags": [
-      "Scraping",
-      "Ethics",
-      "Python"
-    ],
-    "readingTime": "6 min",
-    "status": "published",
-    "content": "# Scraping with Respect\n\nIf your crawler would embarrass you if the site owner watched the logs, rewrite it.\n\n## Defaults\n\n- Honor robots.txt\n- Identify your user agent honestly\n- Back off on 429/503\n- Cache aggressively\n\n## Why it matters\n\nAccess is a relationship, not a loophole."
   }
 ]
