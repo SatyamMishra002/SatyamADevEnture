@@ -61,12 +61,15 @@ Output lands in `/out`. The workflow in `.github/workflows/deploy.yml` builds an
 2. Repo → Settings → Pages → Source: **GitHub Actions**
 3. Optional: set repository variable `BASE_PATH` to `/your-repo` for project pages
 
-## Admin CMS
+## Publish from Admin (phone-friendly)
 
-1. Visit `/admin/`
-2. Sign in with `satyam-admin` (change before production)
-3. CRUD projects, blogs, certificates, trips, vlogs, photos, experience, skills, settings
-4. Export JSON and sync into `/content`
+1. Open `https://satyammishra002.github.io/SatyamADevEnture/admin/`
+2. Sign in with your admin password
+3. One-time: create a GitHub fine-grained token with **Contents: Read and write** on this repo, paste it under **Publish live**
+4. Edit content → **Publish to website**
+5. Wait ~1–2 minutes for GitHub Pages to rebuild
+
+Edits stay on your device until you publish.
 
 ## Extra features
 

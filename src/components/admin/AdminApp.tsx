@@ -16,8 +16,16 @@ import {
   Award,
   Briefcase,
   Sparkles,
+  UploadCloud,
 } from "lucide-react";
 import { useAdminStore, uid } from "@/lib/admin-store";
+import {
+  clearGithubToken,
+  getGithubToken,
+  githubPublishMeta,
+  publishContentToGithub,
+  setGithubToken,
+} from "@/lib/github-publish";
 import type {
   Adventure,
   BlogPost,
@@ -54,6 +62,7 @@ const nav = [
   { id: "photography", label: "Photography", icon: Camera },
   { id: "skills", label: "Skills", icon: Sparkles },
   { id: "settings", label: "Site settings", icon: Settings },
+  { id: "publish", label: "Publish live", icon: UploadCloud },
   { id: "export", label: "Export JSON", icon: FileJson },
   { id: "logs", label: "Activity", icon: Activity },
 ] as const;
@@ -193,7 +202,7 @@ export function AdminApp({ seed }: { seed: Seed }) {
             View site →
           </Link>
         </header>
-        <div className="mx-auto max-w-5xl px-6 py-10">
+        <div className="mx-auto max-w-5xl px-6 py-10 pb-28 lg:pb-10">
           {tab === "dashboard" && <Dashboard />}
           {tab === "projects" && <ProjectsPanel />}
           {tab === "blogs" && <BlogsPanel />}
@@ -204,10 +213,12 @@ export function AdminApp({ seed }: { seed: Seed }) {
           {tab === "photography" && <PhotosPanel />}
           {tab === "skills" && <SkillsPanel />}
           {tab === "settings" && <SettingsPanel />}
+          {tab === "publish" && <PublishPanel />}
           {tab === "export" && <ExportPanel />}
           {tab === "logs" && <LogsPanel />}
         </div>
       </div>
+      <MobilePublishBar onOpenPublish={() => setTab("publish")} />
     </div>
   );
 }
@@ -229,7 +240,8 @@ function Dashboard() {
     <div>
       <h1 className="font-display text-4xl">Dashboard</h1>
       <p className="mt-2 text-text-muted">
-        Edit content locally, then export JSON into <code className="font-mono text-accent">/content</code> for static builds.
+        Edit on this device, then use <span className="text-accent">Publish live</span> so
+        visitors see changes after Pages rebuilds (~1–2 min).
       </p>
       <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {stats.map((stat) => (
@@ -680,6 +692,192 @@ function SettingsPanel() {
         onClick={() => setSite(draft)}
       >
         Save settings
+      </button>
+      <p className="mt-3 text-xs text-text-muted">
+        Saved on this device. Open <span className="text-accent">Publish live</span> to push to the website.
+      </p>
+    </div>
+  );
+}
+
+function PublishPanel() {
+  const store = useAdminStore();
+  const [token, setToken] = useState("");
+  const [saved, setSaved] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [status, setStatus] = useState<string>("");
+  const [error, setError] = useState("");
+  const [commitUrl, setCommitUrl] = useState("");
+
+  useEffect(() => {
+    const existing = getGithubToken();
+    setToken(existing);
+    setSaved(Boolean(existing));
+  }, []);
+
+  const publish = async () => {
+    setBusy(true);
+    setError("");
+    setStatus("Publishing content to GitHub…");
+    setCommitUrl("");
+    try {
+      if (!store.site) throw new Error("Site settings missing — save settings first.");
+      const result = await publishContentToGithub(
+        {
+          site: store.site,
+          projects: store.projects,
+          certificates: store.certificates,
+          experience: store.experience,
+          adventures: store.adventures,
+          vlogs: store.vlogs,
+          photography: store.photography,
+          blogs: store.blogs,
+          skills: store.skills,
+        },
+        "content: update from admin CMS",
+      );
+      store.log("publish", `github:${result.sha.slice(0, 7)}`);
+      setCommitUrl(result.commitUrl);
+      setStatus(
+        "Published. GitHub Pages is rebuilding — live site updates in about 1–2 minutes.",
+      );
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Publish failed");
+      setStatus("");
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  return (
+    <div className="pb-24">
+      <h1 className="font-display text-4xl">Publish live</h1>
+      <p className="mt-2 max-w-2xl text-sm text-text-muted">
+        Edit anything in Admin, then tap <strong className="text-text">Publish to website</strong>.
+        This writes your content into the GitHub repo and redeploys Pages. Works from your phone at{" "}
+        <a className="text-accent" href={githubPublishMeta.adminUrl}>
+          {githubPublishMeta.adminUrl}
+        </a>
+        .
+      </p>
+
+      <div className="mt-10 rounded-2xl border border-border bg-bg-card p-5">
+        <p className="font-mono text-[11px] tracking-widest text-text-muted uppercase">
+          One-time setup
+        </p>
+        <ol className="mt-4 list-decimal space-y-2 pl-5 text-sm text-text-muted">
+          <li>
+            Create a fine-grained token:{" "}
+            <a
+              className="text-accent"
+              href={githubPublishMeta.tokenHelpUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub → Personal access tokens
+            </a>
+          </li>
+          <li>
+            Resource owner: <span className="text-text">{githubPublishMeta.owner}</span>, repository:{" "}
+            <span className="text-text">{githubPublishMeta.repo}</span>
+          </li>
+          <li>
+            Permissions: <span className="text-text">Contents → Read and write</span>
+          </li>
+          <li>Paste the token below (stored only in this browser)</li>
+        </ol>
+
+        <label className="mt-6 block text-xs text-text-muted">
+          GitHub token
+          <input
+            type="password"
+            value={token}
+            onChange={(e) => {
+              setToken(e.target.value);
+              setSaved(false);
+            }}
+            placeholder="github_pat_…"
+            className="mt-1 w-full rounded-xl border border-border bg-bg px-3 py-3 text-sm text-text outline-none focus:border-border-strong"
+            autoComplete="off"
+          />
+        </label>
+        <div className="mt-3 flex flex-wrap gap-2">
+          <button
+            type="button"
+            className="rounded-full bg-accent px-4 py-2 text-sm text-bg"
+            onClick={() => {
+              setGithubToken(token);
+              setSaved(true);
+            }}
+          >
+            Save token on this device
+          </button>
+          <button
+            type="button"
+            className="rounded-full border border-border px-4 py-2 text-sm text-text-muted"
+            onClick={() => {
+              clearGithubToken();
+              setToken("");
+              setSaved(false);
+            }}
+          >
+            Clear token
+          </button>
+        </div>
+        {saved && (
+          <p className="mt-3 text-xs text-success">Token saved on this phone/browser.</p>
+        )}
+      </div>
+
+      <div className="mt-8 rounded-2xl border border-border p-5">
+        <p className="text-sm text-text-muted">
+          Target:{" "}
+          <span className="font-mono text-text">
+            {githubPublishMeta.owner}/{githubPublishMeta.repo}@{githubPublishMeta.branch}
+          </span>
+        </p>
+        <button
+          type="button"
+          disabled={busy}
+          onClick={publish}
+          className="mt-5 w-full rounded-full bg-accent py-3.5 text-sm font-medium text-bg disabled:opacity-60 sm:w-auto sm:px-8"
+        >
+          {busy ? "Publishing…" : "Publish to website"}
+        </button>
+        {status && <p className="mt-4 text-sm text-text">{status}</p>}
+        {commitUrl && (
+          <a
+            href={commitUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-2 inline-block text-sm text-accent"
+          >
+            View commit →
+          </a>
+        )}
+        {error && <p className="mt-4 text-sm text-danger">{error}</p>}
+        <p className="mt-6 text-xs text-text-muted">
+          After publish, open{" "}
+          <a className="text-accent" href={githubPublishMeta.siteUrl}>
+            the live site
+          </a>{" "}
+          in a minute or two (hard-refresh if needed).
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function MobilePublishBar({ onOpenPublish }: { onOpenPublish: () => void }) {
+  return (
+    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-bg/95 p-3 backdrop-blur-md lg:hidden">
+      <button
+        type="button"
+        onClick={onOpenPublish}
+        className="flex w-full items-center justify-center gap-2 rounded-full bg-accent py-3 text-sm text-bg"
+      >
+        <UploadCloud className="h-4 w-4" />
+        Publish live
       </button>
     </div>
   );
