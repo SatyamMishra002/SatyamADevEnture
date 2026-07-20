@@ -20,13 +20,9 @@ export default function ContactPage() {
     { label: "GitHub", href: site.social.github },
     { label: "LinkedIn", href: site.social.linkedin },
     { label: "Twitter", href: site.social.twitter },
-    ...(site.social.youtube
-      ? [{ label: "YouTube", href: site.social.youtube }]
-      : []),
-    ...(site.social.instagram
-      ? [{ label: "Instagram", href: site.social.instagram }]
-      : []),
-  ];
+    { label: "YouTube", href: site.social.youtube },
+    { label: "Instagram", href: site.social.instagram },
+  ].filter((s): s is { label: string; href: string } => Boolean(s.href));
 
   return (
     <AppShell>

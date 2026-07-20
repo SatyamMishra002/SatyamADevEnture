@@ -11,7 +11,7 @@ export type SiteSettings = {
   social: {
     github: string;
     linkedin: string;
-    twitter: string;
+    twitter?: string;
     youtube?: string;
     instagram?: string;
   };
