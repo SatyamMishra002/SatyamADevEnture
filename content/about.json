@@ -1,0 +1,102 @@
+{
+  "journey": [
+    {
+      "year": "2019",
+      "title": "First line of Python",
+      "text": "Automation scripts for mundane tasks. Discovered that code could buy back time — and curiosity."
+    },
+    {
+      "year": "2021",
+      "title": "Backend as craft",
+      "text": "APIs, databases, and the quiet satisfaction of systems that just work. Django and FastAPI became home."
+    },
+    {
+      "year": "2023",
+      "title": "Into intelligence",
+      "text": "Machine learning stopped being a buzzword and became a toolkit — models, pipelines, and responsible design."
+    },
+    {
+      "year": "2025",
+      "title": "Systems + stories",
+      "text": "Building products by day. Collecting mountains, light, and journals by weekend. Both feed the work."
+    }
+  ],
+  "lessons": [
+    "Clarity beats cleverness — every time.",
+    "Ship the smallest honest version first.",
+    "Documentation is kindness to your future self.",
+    "Nature resets the quality of thinking.",
+    "Constraints are creative fuel, not cages."
+  ],
+  "beliefs": [
+    "Software should feel invisible when it works.",
+    "Personality belongs in professional work.",
+    "Learning in public compounds faster.",
+    "Adventure is research for better judgement."
+  ],
+  "howIWork": [
+    "Start with the problem, not the framework.",
+    "Prefer boring technology for critical paths.",
+    "Measure before optimizing.",
+    "Write for the next engineer — including yourself.",
+    "Protect deep work like a calendar ritual."
+  ],
+  "workflow": [
+    { "step": "Morning", "detail": "Clear inbox, one priority, coffee, deep focus block." },
+    { "step": "Build", "detail": "Implement, test, commit small. Prefer vertical slices." },
+    { "step": "Review", "detail": "Read the diff as a stranger. Simplify ruthlessly." },
+    { "step": "Evening", "detail": "Walk, train, or shoot. Let the subconscious compile." }
+  ],
+  "goals": [
+    "Ship production AI systems with clear evaluation loops.",
+    "Master systems design for high-throughput APIs.",
+    "Publish thoughtful long-form writing monthly.",
+    "Document one mountain journey with full photo stories."
+  ],
+  "vision": "A life where engineering precision and outdoor wonder reinforce each other — building calm, durable software while staying close to mountains, cameras, and continuous learning.",
+  "technologies": [
+    "Python",
+    "FastAPI",
+    "Django",
+    "PostgreSQL",
+    "Redis",
+    "PyTorch",
+    "scikit-learn",
+    "Docker",
+    "AWS",
+    "TypeScript",
+    "Next.js",
+    "Playwright"
+  ],
+  "books": [
+    {
+      "title": "Designing Data-Intensive Applications",
+      "author": "Martin Kleppmann",
+      "note": "The systems bible — still reread chapters annually."
+    },
+    {
+      "title": "Atomic Habits",
+      "author": "James Clear",
+      "note": "Compounding applies to code and climbing alike."
+    },
+    {
+      "title": "The Creative Act",
+      "author": "Rick Rubin",
+      "note": "Permission to trust taste over noise."
+    }
+  ],
+  "workspace": [
+    "Minimal desk, warm lamp, one large monitor",
+    "Mechanical keyboard with soft switches",
+    "Notebook always open for architecture sketches",
+    "Standing sessions between deep focus blocks"
+  ],
+  "tools": [
+    "VS Code / Cursor",
+    "iTerm + tmux",
+    "Notion for research",
+    "Linear for tasks",
+    "Figma for structure",
+    "Lightroom for photographs"
+  ]
+}

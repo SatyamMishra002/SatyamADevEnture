@@ -1,0 +1,61 @@
+[
+  {
+    "id": "a1",
+    "slug": "triund-ridge",
+    "title": "Triund Ridge",
+    "place": "Dharamshala",
+    "country": "India",
+    "date": "2025-04-12",
+    "cover": "/images/adventure/triund.svg",
+    "gallery": [
+      "/images/adventure/triund-1.svg",
+      "/images/adventure/triund-2.svg",
+      "/images/adventure/triund-3.svg"
+    ],
+    "journal": "Wind at the ridge felt like a clean compiler — stripping noise. We started before dawn, watched the Dhauladhar catch first light, and learned that the best conversations happen at slow altitudes.",
+    "lat": 32.249,
+    "lng": 76.348,
+    "elevation": "2,875 m",
+    "memories": [
+      "Tea with strangers who became trail friends",
+      "Clouds rolling below the ridge like soft code deploys",
+      "Silence that recalibrated everything"
+    ]
+  },
+  {
+    "id": "a2",
+    "slug": "spiti-light",
+    "title": "Spiti Light",
+    "place": "Spiti Valley",
+    "country": "India",
+    "date": "2024-09-03",
+    "cover": "/images/adventure/spiti.svg",
+    "gallery": [
+      "/images/adventure/spiti-1.svg",
+      "/images/adventure/spiti-2.svg"
+    ],
+    "journal": "High desert geometry. Monasteries holding centuries. Roads that teach patience. Spiti is where photography stopped being about gear and became about waiting.",
+    "lat": 32.246,
+    "lng": 78.033,
+    "elevation": "4,270 m",
+    "memories": [
+      "Golden hour at Key Monastery",
+      "Star fields that made the laptop feel small",
+      "Butter tea after a long dust day"
+    ]
+  },
+  {
+    "id": "a3",
+    "slug": "coorg-rain",
+    "title": "Coorg Rain",
+    "place": "Coorg",
+    "country": "India",
+    "date": "2024-07-19",
+    "cover": "/images/adventure/coorg.svg",
+    "gallery": ["/images/adventure/coorg-1.svg"],
+    "journal": "Monsoon greens, coffee estates, and the kind of rain that forces rest. A soft reset between hard sprints.",
+    "lat": 12.337,
+    "lng": 75.806,
+    "memories": ["Mist on the plantation roads", "Fireplace journaling"]
+  }
+]

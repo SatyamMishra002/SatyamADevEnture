@@ -1,0 +1,23 @@
+{
+  "name": "Satyam",
+  "title": "Python Developer · AI · Adventure",
+  "tagline": "Build systems that think. Live stories that breathe.",
+  "description": "Portfolio and digital journal of a Python developer exploring AI, backend systems, mountains, and the craft of making things that last.",
+  "email": "hello@satyam.dev",
+  "location": "India",
+  "city": "Bengaluru",
+  "availability": "Open to thoughtful collaborations",
+  "resumeUrl": "/resume.pdf",
+  "social": {
+    "github": "https://github.com",
+    "linkedin": "https://linkedin.com",
+    "twitter": "https://twitter.com",
+    "youtube": "https://youtube.com",
+    "instagram": "https://instagram.com"
+  },
+  "spotify": {
+    "track": "Midnight City",
+    "artist": "M83",
+    "url": "https://open.spotify.com"
+  }
+}

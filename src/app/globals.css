@@ -1,26 +1,165 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #090909;
+  --bg-elevated: #111111;
+  --bg-card: #171717;
+  --text: #fafafa;
+  --text-muted: #9ca3af;
+  --accent: #f5f0e8;
+  --accent-soft: rgba(245, 240, 232, 0.08);
+  --border: rgba(250, 250, 250, 0.08);
+  --border-strong: rgba(250, 250, 250, 0.14);
+  --glass: rgba(17, 17, 17, 0.72);
+  --ring: rgba(245, 240, 232, 0.35);
+  --success: #a3b18a;
+  --danger: #c4a484;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-bg-card: var(--bg-card);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-glass: var(--glass);
+  --color-ring: var(--ring);
+  --color-danger: var(--danger);
+  --color-success: var(--success);
+  --font-sans: var(--font-inter);
+  --font-display: "Satoshi", var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(245, 240, 232, 0.2);
+  color: var(--text);
+}
+
+.font-display {
+  font-family: "Satoshi", var(--font-inter), system-ui, sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.font-mono {
+  font-family: var(--font-jetbrains), ui-monospace, monospace;
+}
+
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(16px) saturate(1.2);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  border: 1px solid var(--border);
+}
+
+.noise::before {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.mesh {
+  background:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(245, 240, 232, 0.09), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 90% 10%, rgba(156, 163, 175, 0.08), transparent 50%),
+    radial-gradient(ellipse 50% 60% at 50% 100%, rgba(245, 240, 232, 0.04), transparent 55%),
+    var(--bg);
+}
+
+.editorial-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
+}
+
+.prose-calm {
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-size: 1.0625rem;
+}
+
+.prose-calm h1,
+.prose-calm h2,
+.prose-calm h3 {
+  color: var(--text);
+  font-family: "Satoshi", var(--font-inter), sans-serif;
+  letter-spacing: -0.03em;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.prose-calm h1 { font-size: 2.25rem; }
+.prose-calm h2 { font-size: 1.5rem; }
+.prose-calm h3 { font-size: 1.2rem; }
+
+.prose-calm p { margin-bottom: 1.25rem; }
+
+.prose-calm code {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 0.9em;
+  background: var(--bg-card);
+  padding: 0.15em 0.4em;
+  border-radius: 0.35rem;
+  border: 1px solid var(--border);
+}
+
+.prose-calm pre {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.prose-calm pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.prose-calm ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.prose-calm li { margin-bottom: 0.4rem; }
+
+.adventure-theme {
+  --bg: #0a0d0b;
+  --bg-elevated: #121612;
+  --bg-card: #181c18;
+  --accent: #d8e2d0;
+}
+
+.custom-cursor-none,
+.custom-cursor-none * {
+  cursor: none !important;
+}
+
+@media (max-width: 768px) {
+  .custom-cursor-none,
+  .custom-cursor-none * {
+    cursor: auto !important;
+  }
 }
