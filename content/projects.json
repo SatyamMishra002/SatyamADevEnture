@@ -15,9 +15,18 @@
     "year": 2025,
     "role": "Lead Backend & ML Engineer",
     "timeline": [
-      { "label": "Discovery", "date": "Jan 2025" },
-      { "label": "Prototype", "date": "Feb 2025" },
-      { "label": "Production", "date": "Apr 2025" }
+      {
+        "label": "Discovery",
+        "date": "Jan 2025"
+      },
+      {
+        "label": "Prototype",
+        "date": "Feb 2025"
+      },
+      {
+        "label": "Production",
+        "date": "Apr 2025"
+      }
     ],
     "problem": "Ad-hoc notebooks could not serve predictions reliably. Latency spiked, models drifted, and ops had no visibility.",
     "motivation": "I wanted inference to feel like infrastructure — boring, measured, and trustworthy — not a science experiment.",
@@ -43,14 +52,34 @@
       "Self-serve experiment dashboard"
     ],
     "stats": [
-      { "label": "Latency p95", "value": "78ms" },
-      { "label": "Requests/day", "value": "2.4M" },
-      { "label": "Uptime", "value": "99.9%" }
+      {
+        "label": "Latency p95",
+        "value": "78ms"
+      },
+      {
+        "label": "Requests/day",
+        "value": "2.4M"
+      },
+      {
+        "label": "Uptime",
+        "value": "99.9%"
+      }
     ],
-    "tech": ["Python", "FastAPI", "PyTorch", "Redis", "PostgreSQL", "Docker"],
+    "tech": [
+      "Python",
+      "FastAPI",
+      "PyTorch",
+      "Redis",
+      "PostgreSQL",
+      "Docker"
+    ],
     "github": "https://github.com",
     "live": "https://example.com",
-    "tags": ["AI", "Backend", "MLOps"]
+    "tags": [
+      "AI",
+      "Backend",
+      "MLOps"
+    ]
   },
   {
     "id": "p2",
@@ -59,14 +88,22 @@
     "subtitle": "Ethical scraping toolkit with resilient queues",
     "summary": "A Django-powered orchestration layer for polite crawlers, proxy rotation, and structured extraction pipelines.",
     "cover": "/images/projects/scrapecraft.svg",
-    "gallery": ["/images/projects/scrapecraft-1.svg"],
+    "gallery": [
+      "/images/projects/scrapecraft-1.svg"
+    ],
     "status": "published",
     "featured": true,
     "year": 2024,
     "role": "Full-stack Python Developer",
     "timeline": [
-      { "label": "MVP", "date": "Mar 2024" },
-      { "label": "Scale", "date": "Aug 2024" }
+      {
+        "label": "MVP",
+        "date": "Mar 2024"
+      },
+      {
+        "label": "Scale",
+        "date": "Aug 2024"
+      }
     ],
     "problem": "One-off scrapers broke silently. Teams needed retries, rate limits, and clean schemas without reinventing orchestration.",
     "motivation": "Automation should respect sites and still deliver dependable data.",
@@ -91,12 +128,28 @@
       "Cost-aware proxy routing"
     ],
     "stats": [
-      { "label": "Jobs/mo", "value": "12k" },
-      { "label": "Success rate", "value": "97%" }
+      {
+        "label": "Jobs/mo",
+        "value": "12k"
+      },
+      {
+        "label": "Success rate",
+        "value": "97%"
+      }
     ],
-    "tech": ["Python", "Django", "Celery", "Playwright", "PostgreSQL"],
+    "tech": [
+      "Python",
+      "Django",
+      "Celery",
+      "Playwright",
+      "PostgreSQL"
+    ],
     "github": "https://github.com",
-    "tags": ["Automation", "Scraping", "Backend"]
+    "tags": [
+      "Automation",
+      "Scraping",
+      "Backend"
+    ]
   },
   {
     "id": "p3",
@@ -111,7 +164,10 @@
     "year": 2024,
     "role": "Backend Engineer",
     "timeline": [
-      { "label": "Launch", "date": "Nov 2024" }
+      {
+        "label": "Launch",
+        "date": "Nov 2024"
+      }
     ],
     "problem": "Teams drowned in metrics. Important regressions hid in chart noise.",
     "motivation": "Surfaces should narrate change, not just plot it.",
@@ -128,13 +184,29 @@
       "Restraint is a design system",
       "Static can be plenty for analytics"
     ],
-    "future": ["Anomaly digests via email"],
-    "stats": [
-      { "label": "Panels", "value": "12" },
-      { "label": "Build", "value": "38s" }
+    "future": [
+      "Anomaly digests via email"
     ],
-    "tech": ["FastAPI", "OpenTelemetry", "SQLite", "Next.js"],
+    "stats": [
+      {
+        "label": "Panels",
+        "value": "12"
+      },
+      {
+        "label": "Build",
+        "value": "38s"
+      }
+    ],
+    "tech": [
+      "FastAPI",
+      "OpenTelemetry",
+      "SQLite",
+      "Next.js"
+    ],
     "github": "https://github.com",
-    "tags": ["Observability", "Backend"]
+    "tags": [
+      "Observability",
+      "Backend"
+    ]
   }
 ]

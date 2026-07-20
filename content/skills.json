@@ -1,14 +1,62 @@
 [
-  { "name": "Python", "category": "language", "level": 95 },
-  { "name": "TypeScript", "category": "language", "level": 70 },
-  { "name": "FastAPI", "category": "framework", "level": 92 },
-  { "name": "Django", "category": "framework", "level": 88 },
-  { "name": "PyTorch", "category": "ml", "level": 80 },
-  { "name": "scikit-learn", "category": "ml", "level": 85 },
-  { "name": "PostgreSQL", "category": "tool", "level": 86 },
-  { "name": "Redis", "category": "tool", "level": 78 },
-  { "name": "Docker", "category": "tool", "level": 82 },
-  { "name": "Playwright", "category": "tool", "level": 75 },
-  { "name": "System Design", "category": "soft", "level": 80 },
-  { "name": "Technical Writing", "category": "soft", "level": 84 }
+  {
+    "name": "Python",
+    "category": "language",
+    "level": 95
+  },
+  {
+    "name": "TypeScript",
+    "category": "language",
+    "level": 70
+  },
+  {
+    "name": "FastAPI",
+    "category": "framework",
+    "level": 92
+  },
+  {
+    "name": "Django",
+    "category": "framework",
+    "level": 88
+  },
+  {
+    "name": "PyTorch",
+    "category": "ml",
+    "level": 80
+  },
+  {
+    "name": "scikit-learn",
+    "category": "ml",
+    "level": 85
+  },
+  {
+    "name": "PostgreSQL",
+    "category": "tool",
+    "level": 86
+  },
+  {
+    "name": "Redis",
+    "category": "tool",
+    "level": 78
+  },
+  {
+    "name": "Docker",
+    "category": "tool",
+    "level": 82
+  },
+  {
+    "name": "Playwright",
+    "category": "tool",
+    "level": 75
+  },
+  {
+    "name": "System Design",
+    "category": "soft",
+    "level": 80
+  },
+  {
+    "name": "Technical Writing",
+    "category": "soft",
+    "level": 84
+  }
 ]

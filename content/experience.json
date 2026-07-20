@@ -12,7 +12,13 @@
       "Reduced p95 latency by 35% through caching and query discipline",
       "Mentored juniors on pragmatic Python and code review culture"
     ],
-    "tech": ["Python", "FastAPI", "PostgreSQL", "Redis", "Docker"]
+    "tech": [
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "Redis",
+      "Docker"
+    ]
   },
   {
     "id": "e2",
@@ -27,7 +33,12 @@
       "Introduced schema validation that cut data incidents in half",
       "Partnered with data science on feature delivery SLAs"
     ],
-    "tech": ["Django", "Celery", "Playwright", "AWS S3"]
+    "tech": [
+      "Django",
+      "Celery",
+      "Playwright",
+      "AWS S3"
+    ]
   },
   {
     "id": "e3",
@@ -41,6 +52,10 @@
       "Delivered reporting bots and internal tools",
       "Learned to scope ruthlessly and communicate tradeoffs"
     ],
-    "tech": ["Python", "Selenium", "SQLite"]
+    "tech": [
+      "Python",
+      "Selenium",
+      "SQLite"
+    ]
   }
 ]

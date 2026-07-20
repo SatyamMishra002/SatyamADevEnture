@@ -7,7 +7,11 @@
     "image": "/images/certs/ml-spec.svg",
     "credentialId": "ML-2024-SATYAM",
     "verifyUrl": "https://coursera.org",
-    "skills": ["Supervised Learning", "Neural Networks", "Advice for ML Projects"]
+    "skills": [
+      "Supervised Learning",
+      "Neural Networks",
+      "Advice for ML Projects"
+    ]
   },
   {
     "id": "c2",
@@ -17,7 +21,11 @@
     "image": "/images/certs/aws-cp.svg",
     "credentialId": "AWS-CP-88421",
     "verifyUrl": "https://aws.amazon.com",
-    "skills": ["Cloud Fundamentals", "Security", "Billing"]
+    "skills": [
+      "Cloud Fundamentals",
+      "Security",
+      "Billing"
+    ]
   },
   {
     "id": "c3",
@@ -25,7 +33,11 @@
     "issuer": "Professional Course",
     "date": "2024-02-18",
     "image": "/images/certs/fastapi.svg",
-    "skills": ["Async Python", "Dependency Injection", "Testing"]
+    "skills": [
+      "Async Python",
+      "Dependency Injection",
+      "Testing"
+    ]
   },
   {
     "id": "c4",
@@ -34,6 +46,10 @@
     "date": "2023-08-21",
     "image": "/images/certs/dlnd.svg",
     "verifyUrl": "https://udacity.com",
-    "skills": ["CNNs", "RNNs", "GANs"]
+    "skills": [
+      "CNNs",
+      "RNNs",
+      "GANs"
+    ]
   }
 ]

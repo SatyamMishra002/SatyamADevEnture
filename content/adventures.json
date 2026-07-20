@@ -52,10 +52,15 @@
     "country": "India",
     "date": "2024-07-19",
     "cover": "/images/adventure/coorg.svg",
-    "gallery": ["/images/adventure/coorg-1.svg"],
+    "gallery": [
+      "/images/adventure/coorg-1.svg"
+    ],
     "journal": "Monsoon greens, coffee estates, and the kind of rain that forces rest. A soft reset between hard sprints.",
     "lat": 12.337,
     "lng": 75.806,
-    "memories": ["Mist on the plantation roads", "Fireplace journaling"]
+    "memories": [
+      "Mist on the plantation roads",
+      "Fireplace journaling"
+    ]
   }
 ]
