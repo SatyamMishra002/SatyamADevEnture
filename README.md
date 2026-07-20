@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Satyam — Portfolio & Digital Journal
 
-## Getting Started
+A premium multi-page developer portfolio designed as a calm digital experience — professional case studies alongside adventure journals, photography, and writing.
 
-First, run the development server:
+## Architecture
+
+| Layer | Choice | Why |
+| --- | --- | --- |
+| Framework | Next.js App Router + TypeScript | Strong DX, file-based routes, static export |
+| Styling | Tailwind CSS v4 + design tokens | Fast iteration with a locked premium palette |
+| Motion | Framer Motion | Tasteful page/scroll motion without flash |
+| Content | JSON in `/content` | Git-friendly CMS source of truth for GitHub Pages |
+| Admin | Client CMS + localStorage + JSON export | Edit without a database; commit exported files |
+| Deploy | `output: "export"` → GitHub Pages | Zero-ops hosting with Actions |
+
+### Important decisions
+
+1. **Static-first** — The public site is fully static so it deploys cleanly to GitHub Pages with no runtime database.
+2. **Content as files** — All portfolio data lives in `/content/*.json`. The admin panel hydrates from these files and can export an updated bundle to paste back into the repo.
+3. **Separate experiences** — Each route owns its visual identity (e.g. Adventure uses a nature-tinted theme) while sharing one design system.
+4. **Mindset over bio on Home** — The landing introduces principles and living context (time, weather, music, stack) rather than a résumé dump.
+5. **Case studies over cards** — Projects open into full narratives: problem, architecture, metrics, lessons.
+
+## Pages
+
+- `/` Home — scroll storytelling, particles, live context
+- `/about` Editorial sections (journey, beliefs, workflow…)
+- `/projects` + `/projects/[slug]` Case studies
+- `/certifications` Certificate wall + modal
+- `/experience` Career narrative
+- `/adventure` + journals Nature-inspired
+- `/vlogs` Video index
+- `/photography` Masonry + lightbox EXIF
+- `/blogs` + posts Medium-minimal writing
+- `/contact` Availability + guestbook
+- `/terminal` Interactive shell easter egg
+- `/admin` Full CMS (password: `satyam-admin`)
+
+## Develop
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Build (GitHub Pages)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# User site (username.github.io) — leave base path empty
+npm run build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Project site — set base path to /repo-name
+NEXT_PUBLIC_BASE_PATH=/satyam-portfolio npm run build
+```
 
-## Learn More
+Output lands in `/out`. The workflow in `.github/workflows/deploy.yml` builds and publishes automatically.
 
-To learn more about Next.js, take a look at the following resources:
+### GitHub Pages setup
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Push to `main`
+2. Repo → Settings → Pages → Source: **GitHub Actions**
+3. Optional: set repository variable `BASE_PATH` to `/your-repo` for project pages
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Admin CMS
 
-## Deploy on Vercel
+1. Visit `/admin/`
+2. Sign in with `satyam-admin` (change before production)
+3. CRUD projects, blogs, certificates, trips, vlogs, photos, experience, skills, settings
+4. Export JSON and sync into `/content`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Extra features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Command palette (`⌘K` / `Ctrl+K`)
+- Custom cursor (fine pointers)
+- Magnetic CTAs, scroll progress, page noise + mesh
+- Local AI guide (rule-based, no API key)
+- PWA manifest + service worker
+- `sitemap.xml`, `robots.txt`, `feed.xml`
+- Guestbook (localStorage) on Contact
+
+## Customize
+
+Edit `/content` JSON files for copy and media paths. Replace SVG placeholders in `/public/images` with real photography when ready.
+
+## License
+
+Personal portfolio — all rights reserved.

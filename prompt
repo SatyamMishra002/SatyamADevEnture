@@ -1,0 +1,693 @@
+You are an award-winning Senior Product Designer, Creative Director, UX Researcher, Frontend Architect, and Full Stack Engineer.
+
+Your task is to build the BEST developer portfolio on the internet.
+
+This should NOT look like a normal portfolio.
+
+Avoid:
+- Typical hero section
+- Project cards
+- Generic timeline
+- Basic resume website
+- Copying existing portfolio layouts
+
+The website should feel like a premium digital experience.
+
+========================================================
+ABOUT ME
+========================================================
+
+I am a Python Developer.
+
+My interests:
+
+• Artificial Intelligence
+• Machine Learning
+• Backend Development
+• Automation
+• Web Scraping
+• FastAPI
+• Django
+• Adventure
+• Travelling
+• Photography
+• Vlogs
+• Mountains
+• Fitness
+• Learning
+
+The website is both:
+
+Professional Portfolio
+
+AND
+
+Personal Digital Journal.
+
+Visitors should understand both my technical side and my personality.
+
+========================================================
+DESIGN PHILOSOPHY
+========================================================
+
+Design should feel like:
+
+Apple
+Nothing Phone
+Linear
+Raycast
+Vercel
+Minimal Japanese design
+Scandinavian aesthetics
+Modern Editorial layouts
+
+No neon.
+
+No cyberpunk.
+
+No gaming.
+
+No rainbow gradients.
+
+Everything must feel calm.
+
+Luxury.
+
+Premium.
+
+Sophisticated.
+
+Very expensive.
+
+Minimal.
+
+Lots of whitespace.
+
+Perfect typography.
+
+========================================================
+COLOR PALETTE
+========================================================
+
+Dark mode default.
+
+Primary:
+#090909
+
+Secondary:
+#111111
+
+Cards:
+#171717
+
+Text:
+#FAFAFA
+
+Secondary text:
+#9CA3AF
+
+Accent:
+Warm White
+
+Very subtle glass effect.
+
+Very subtle blur.
+
+No heavy shadows.
+
+========================================================
+TYPOGRAPHY
+========================================================
+
+Use premium typography.
+
+Fonts:
+
+General:
+Inter
+
+Headings:
+General Sans
+or
+Satoshi
+
+Code:
+JetBrains Mono
+
+Spacing should feel like Apple.
+
+Large headings.
+
+Editorial layout.
+
+========================================================
+WEBSITE STRUCTURE
+========================================================
+
+This should NOT be a single-page website.
+
+Create multiple experiences.
+
+Each page should have its own visual identity while still feeling like one ecosystem.
+
+Pages:
+
+1. Home
+
+2. About
+
+3. Projects
+
+4. Certifications
+
+5. Experience
+
+6. Adventure
+
+7. Vlogs
+
+8. Photography
+
+9. Blogs
+
+10. Contact
+
+11. Admin
+
+========================================================
+HOME PAGE
+========================================================
+
+Make this unforgettable.
+
+Instead of introducing me,
+
+Introduce my mindset.
+
+Large typography.
+
+Beautiful slow animations.
+
+Mouse interactions.
+
+Scroll storytelling.
+
+Interactive background.
+
+Small particles.
+
+Noise texture.
+
+Animated gradient mesh.
+
+Floating code snippets.
+
+GitHub contribution visualization.
+
+Latest project.
+
+Latest blog.
+
+Adventure highlight.
+
+Photography highlight.
+
+Current tech stack.
+
+Now playing music.
+
+Weather.
+
+Current city.
+
+Current time.
+
+Everything elegant.
+
+========================================================
+ABOUT PAGE
+========================================================
+
+Do NOT use boring paragraphs.
+
+Create sections like:
+
+My Journey
+
+Lessons Learned
+
+What I Believe
+
+How I Work
+
+Daily Workflow
+
+Current Goals
+
+Future Vision
+
+Favorite Technologies
+
+Books
+
+Workspace
+
+Tools
+
+========================================================
+PROJECT PAGE
+========================================================
+
+This is the most important page.
+
+Do NOT use simple cards.
+
+Every project opens into a full case study.
+
+Include:
+
+Problem
+
+Motivation
+
+Architecture
+
+Screenshots
+
+Tech Stack
+
+Challenges
+
+Performance
+
+Lessons
+
+GitHub
+
+Live Demo
+
+Future Improvements
+
+Image Gallery
+
+Videos
+
+Timeline
+
+Statistics
+
+========================================================
+CERTIFICATION PAGE
+========================================================
+
+Beautiful certificate wall.
+
+Apple style.
+
+Click opens modal.
+
+Zoom animation.
+
+Verification links.
+
+Completion date.
+
+Skill tags.
+
+========================================================
+ADVENTURE PAGE
+========================================================
+
+This should feel completely different.
+
+Nature-inspired design.
+
+Parallax mountains.
+
+Travel timeline.
+
+Interactive map.
+
+Gallery.
+
+Drone-style transitions.
+
+Memories.
+
+Trip journals.
+
+Places visited.
+
+Bucket list.
+
+Photo stories.
+
+========================================================
+VLOG PAGE
+========================================================
+
+Modern YouTube style.
+
+Beautiful thumbnails.
+
+Categories.
+
+Embedded videos.
+
+Featured video.
+
+Watch progress.
+
+Like counter.
+
+Comments section (optional).
+
+========================================================
+PHOTOGRAPHY PAGE
+========================================================
+
+Masonry gallery.
+
+Fullscreen preview.
+
+EXIF data.
+
+Camera information.
+
+Favorite shots.
+
+Collections.
+
+Landscape mode.
+
+Portrait mode.
+
+Night mode.
+
+========================================================
+BLOG PAGE
+========================================================
+
+Minimal Medium-style.
+
+Excellent typography.
+
+Reading progress.
+
+Estimated reading time.
+
+Code highlighting.
+
+Table of contents.
+
+Search.
+
+Categories.
+
+Related posts.
+
+========================================================
+CONTACT PAGE
+========================================================
+
+Elegant.
+
+Interactive globe.
+
+Location.
+
+Email.
+
+GitHub.
+
+LinkedIn.
+
+Twitter.
+
+Resume download.
+
+Availability.
+
+========================================================
+ADMIN PANEL
+========================================================
+
+This must NOT be basic.
+
+Create a full CMS.
+
+Protected login.
+
+JWT Authentication.
+
+Dashboard.
+
+Analytics.
+
+CRUD for:
+
+Projects
+
+Certificates
+
+Blogs
+
+Vlogs
+
+Photography
+
+Adventure Trips
+
+Experience
+
+Skills
+
+Social Links
+
+SEO
+
+Site Settings
+
+Homepage Sections
+
+Media Library
+
+Drag-and-drop uploads.
+
+Image optimization.
+
+Video uploads.
+
+Markdown editor.
+
+Rich text editor.
+
+Autosave.
+
+Draft mode.
+
+Publish mode.
+
+Delete confirmation.
+
+Role-based access.
+
+Activity logs.
+
+Dark mode.
+
+Responsive.
+
+========================================================
+TECH STACK
+========================================================
+
+Frontend
+
+Next.js
+
+React
+
+TypeScript
+
+TailwindCSS
+
+Framer Motion
+
+GSAP
+
+React Three Fiber (minimal)
+
+Shadcn UI
+
+Lucide Icons
+
+Backend
+
+Node.js
+
+Express
+
+SQLite during development
+
+JSON fallback
+
+For GitHub Pages deployment:
+
+Generate static website.
+
+Use markdown/json as CMS.
+
+Admin panel should generate JSON files automatically.
+
+No external database required.
+
+Use GitHub API if needed.
+
+========================================================
+DEPLOYMENT
+========================================================
+
+Must deploy perfectly on GitHub Pages.
+
+Generate GitHub Actions.
+
+Automatic build.
+
+SEO optimized.
+
+Image optimization.
+
+Lazy loading.
+
+Sitemap.
+
+robots.txt
+
+RSS feed.
+
+Manifest.
+
+PWA.
+
+Offline support.
+
+========================================================
+PERFORMANCE
+========================================================
+
+Lighthouse
+
+100 Performance
+
+100 Accessibility
+
+100 SEO
+
+100 Best Practices
+
+Loading under 1 second.
+
+========================================================
+ANIMATIONS
+========================================================
+
+Use tasteful animations.
+
+Nothing flashy.
+
+Everything should feel expensive.
+
+Page transitions.
+
+Scroll reveal.
+
+Micro interactions.
+
+Smooth cursor.
+
+Magnetic buttons.
+
+Floating navigation.
+
+Section transitions.
+
+========================================================
+EXTRA FEATURES
+========================================================
+
+AI assistant.
+
+Global search.
+
+Command Palette (Ctrl+K).
+
+Theme switcher.
+
+Keyboard shortcuts.
+
+Visitor analytics.
+
+Guestbook.
+
+Reading list.
+
+Bookmarks.
+
+Favorite projects.
+
+Spotify integration.
+
+GitHub contribution graph.
+
+GitHub repositories.
+
+Latest commits.
+
+Resume generator.
+
+PDF export.
+
+Newsletter.
+
+RSS.
+
+Timeline.
+
+Terminal page.
+
+404 page.
+
+Loading screen.
+
+Custom cursor.
+
+Scroll indicator.
+
+Hidden easter eggs.
+
+========================================================
+CODE QUALITY
+========================================================
+
+Production-ready.
+
+Clean architecture.
+
+Reusable components.
+
+Strict TypeScript.
+
+SEO.
+
+Accessibility.
+
+Responsive.
+
+Scalable folder structure.
+
+Documentation.
+
+Generate the project step-by-step with clean commits and explain every important architectural decision.
+
+This website should feel worthy of winning an Awwwards Honorable Mention while still being fast, usable, and maintainable.

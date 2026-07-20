@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Satyam — Journal</title>
+    <link>https://satyam.dev</link>
+    <description>Portfolio and digital journal of a Python developer exploring AI, backend systems, mountains, and the craft of making things that last.</description>
+    <item>
+      <title><![CDATA[Designing Calm APIs]]></title>
+      <link>https://satyam.dev/blogs/calm-apis/</link>
+      <guid>https://satyam.dev/blogs/calm-apis/</guid>
+      <pubDate>Fri, 02 May 2025 00:00:00 +0000</pubDate>
+      <description><![CDATA[APIs should feel like a good hotel lobby — quiet, predictable, and never surprising for the wrong reasons.]]></description>
+    </item>
+    <item>
+      <title><![CDATA[What Mountains Taught Me About Models]]></title>
+      <link>https://satyam.dev/blogs/mountains-and-models/</link>
+      <guid>https://satyam.dev/blogs/mountains-and-models/</guid>
+      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
+      <description><![CDATA[Altitude changes how you plan. So does production ML. Both punish optimism without preparation.]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Scraping with Respect]]></title>
+      <link>https://satyam.dev/blogs/scraping-with-respect/</link>
+      <guid>https://satyam.dev/blogs/scraping-with-respect/</guid>
+      <pubDate>Fri, 22 Nov 2024 00:00:00 +0000</pubDate>
+      <description><![CDATA[Automation can be polite. Here's how I think about rate limits, robots.txt, and long-term access.]]></description>
+    </item>
+  </channel>
+</rss>
