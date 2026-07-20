@@ -1,17 +1,16 @@
 {
-  "name": "Satyam",
+  "name": "Satyam Mishra",
   "title": "Python Developer · AI · Adventure",
   "tagline": "Build systems that think. Live stories that breathe.",
   "description": "Portfolio and digital journal of a Python developer exploring AI, backend systems, mountains, and the craft of making things that last.",
-  "email": "hello@satyam.dev",
+  "email": "satyammishra.cs@gmail.com",
   "location": "India",
-  "city": "Bengaluru",
+  "city": "Mumbai",
   "availability": "Open to thoughtful collaborations",
   "resumeUrl": "/resume.pdf",
   "social": {
-    "github": "https://github.com",
-    "linkedin": "https://linkedin.com",
-    "twitter": "https://twitter.com",
+    "github": "https://github.com/SatyamMishra002",
+    "linkedin": "https://www.linkedin.com/in/satyammishracs/",
     "youtube": "https://youtube.com",
     "instagram": "https://instagram.com"
   },
