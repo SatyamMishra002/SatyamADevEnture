@@ -22,10 +22,14 @@ import { useAdminStore, uid } from "@/lib/admin-store";
 import {
   clearGithubToken,
   getGithubToken,
+  getPendingMedia,
   githubPublishMeta,
   publishContentToGithub,
   setGithubToken,
+  addPendingMedia,
+  fileToPendingMedia,
 } from "@/lib/github-publish";
+import { withBasePath } from "@/lib/paths";
 import type {
   Adventure,
   BlogPost,
@@ -78,7 +82,18 @@ export function AdminApp({ seed }: { seed: Seed }) {
 
   useEffect(() => {
     const s = useAdminStore.getState();
-    if (!s.projects.length) {
+    const fingerprint = [
+      seed.site.name,
+      seed.site.city,
+      seed.site.phone ?? "",
+      seed.projects.map((p) => p.slug).join(","),
+      seed.adventures.map((a) => a.slug).join(","),
+      seed.photography.length,
+      seed.certificates.map((c) => c.title).join(","),
+    ].join("|");
+    const key = "satyam-seed-fp";
+    const prev = localStorage.getItem(key);
+    if (prev !== fingerprint || !s.projects.length) {
       s.hydrate({
         site: seed.site,
         projects: seed.projects,
@@ -90,6 +105,7 @@ export function AdminApp({ seed }: { seed: Seed }) {
         blogs: seed.blogs,
         skills: seed.skills,
       });
+      localStorage.setItem(key, fingerprint);
     }
     setHydrated(true);
   }, [seed]);
@@ -601,38 +617,140 @@ function VlogsPanel() {
 function PhotosPanel() {
   const { photography, upsertPhoto, deletePhoto } = useAdminStore();
   const [draft, setDraft] = useState<Photo | null>(null);
+  const [uploading, setUploading] = useState(false);
+  const [uploadError, setUploadError] = useState("");
+  const [preview, setPreview] = useState<string>("");
+
   return (
     <EntityPanel
       title="Photography"
-      onCreate={() =>
+      onCreate={() => {
+        setPreview("");
+        setUploadError("");
         setDraft({
           id: uid("ph"),
           title: "Untitled",
-          src: "/images/photos/desk.svg",
+          src: "",
           collection: "General",
           mode: "landscape",
-        })
-      }
+        });
+      }}
     >
+      <p className="mb-6 text-sm text-text-muted">
+        Upload a photo here (works on phone), then open <strong className="text-text">Publish live</strong> so
+        visitors see it after Pages rebuilds (~1–2 min). Token required under Publish live.
+      </p>
       <EntityList
         items={photography.map((p) => ({
           id: p.id,
           title: p.title,
           meta: `${p.collection} · ${p.mode}`,
-          onEdit: () => setDraft(p),
+          onEdit: () => {
+            setPreview("");
+            setUploadError("");
+            setDraft(p);
+          },
           onDelete: () => {
             if (confirm("Delete?")) deletePhoto(p.id);
           },
         }))}
       />
       {draft && (
-        <EditorSheet onClose={() => setDraft(null)} onSave={() => { upsertPhoto(draft); setDraft(null); }}>
+        <EditorSheet
+          onClose={() => {
+            setDraft(null);
+            setPreview("");
+          }}
+          onSave={() => {
+            if (!draft.src) {
+              setUploadError("Upload a photo first.");
+              return;
+            }
+            upsertPhoto(draft);
+            setDraft(null);
+            setPreview("");
+          }}
+        >
           <div className="grid gap-3 md:grid-cols-2">
             <Field label="Title" value={draft.title} onChange={(v) => setDraft({ ...draft, title: v })} />
-            <Field label="Src" value={draft.src} onChange={(v) => setDraft({ ...draft, src: v })} />
             <Field label="Collection" value={draft.collection} onChange={(v) => setDraft({ ...draft, collection: v })} />
-            <Field label="Mode" value={draft.mode} onChange={(v) => setDraft({ ...draft, mode: v as Photo["mode"] })} />
+            <label className="block text-xs text-text-muted">
+              Mode
+              <select
+                className="mt-1 w-full rounded-xl border border-border bg-bg-card px-3 py-2 text-sm text-text"
+                value={draft.mode}
+                onChange={(e) =>
+                  setDraft({ ...draft, mode: e.target.value as Photo["mode"] })
+                }
+              >
+                <option value="landscape">Landscape</option>
+                <option value="portrait">Portrait</option>
+                <option value="night">Night</option>
+              </select>
+            </label>
+            <label className="block text-xs text-text-muted md:col-span-2">
+              Upload photo (phone camera or gallery)
+              <input
+                type="file"
+                accept="image/*"
+                capture="environment"
+                className="mt-2 block w-full text-sm text-text"
+                disabled={uploading}
+                onChange={async (e) => {
+                  const file = e.target.files?.[0];
+                  if (!file || !draft) return;
+                  setUploading(true);
+                  setUploadError("");
+                  try {
+                    if (!getGithubToken()) {
+                      throw new Error(
+                        "Save your GitHub token under Publish live first, then upload.",
+                      );
+                    }
+                    const { media, publicSrc } = await fileToPendingMedia(file);
+                    addPendingMedia(media);
+                    setDraft({
+                      ...draft,
+                      src: publicSrc,
+                      title:
+                        draft.title === "Untitled"
+                          ? file.name.replace(/\.[^.]+$/, "")
+                          : draft.title,
+                    });
+                    setPreview(URL.createObjectURL(file));
+                  } catch (err) {
+                    setUploadError(
+                      err instanceof Error ? err.message : "Upload failed",
+                    );
+                  } finally {
+                    setUploading(false);
+                  }
+                }}
+              />
+            </label>
           </div>
+          {(preview || draft.src) && (
+            <div className="mt-4 overflow-hidden rounded-xl border border-border">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={preview || withBasePath(draft.src)}
+                alt={draft.title}
+                className="max-h-64 w-full object-cover"
+              />
+              <p className="font-mono truncate px-3 py-2 text-[11px] text-text-muted">
+                {draft.src || "No path yet"}
+                {getPendingMedia().some((m) =>
+                  draft.src.endsWith(m.path.replace(/^public/, "")),
+                )
+                  ? " · queued for Publish"
+                  : ""}
+              </p>
+            </div>
+          )}
+          {uploading && (
+            <p className="mt-3 text-sm text-text-muted">Preparing image…</p>
+          )}
+          {uploadError && <p className="mt-3 text-sm text-danger">{uploadError}</p>}
         </EditorSheet>
       )}
     </EntityPanel>
@@ -718,7 +836,12 @@ function PublishPanel() {
   const publish = async () => {
     setBusy(true);
     setError("");
-    setStatus("Publishing content to GitHub…");
+    const pending = getPendingMedia().length;
+    setStatus(
+      pending
+        ? `Publishing content + ${pending} photo(s) to GitHub…`
+        : "Publishing content to GitHub…",
+    );
     setCommitUrl("");
     try {
       if (!store.site) throw new Error("Site settings missing — save settings first.");
@@ -739,7 +862,9 @@ function PublishPanel() {
       store.log("publish", `github:${result.sha.slice(0, 7)}`);
       setCommitUrl(result.commitUrl);
       setStatus(
-        "Published. GitHub Pages is rebuilding — live site updates in about 1–2 minutes.",
+        result.mediaCount
+          ? `Published ${result.mediaCount} photo(s) + content. Site updates in about 1–2 minutes.`
+          : "Published. GitHub Pages is rebuilding — live site updates in about 1–2 minutes.",
       );
     } catch (e) {
       setError(e instanceof Error ? e.message : "Publish failed");
@@ -835,6 +960,10 @@ function PublishPanel() {
           <span className="font-mono text-text">
             {githubPublishMeta.owner}/{githubPublishMeta.repo}@{githubPublishMeta.branch}
           </span>
+        </p>
+        <p className="mt-2 text-sm text-text-muted">
+          Photos waiting to publish:{" "}
+          <span className="text-text">{getPendingMedia().length}</span>
         </p>
         <button
           type="button"

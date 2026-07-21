@@ -2,6 +2,7 @@ const OWNER = "SatyamMishra002";
 const REPO = "SatyamADevEnture";
 const BRANCH = "main";
 const TOKEN_KEY = "satyam-gh-token";
+const PENDING_MEDIA_KEY = "satyam-pending-media";
 
 export type ContentBundle = {
   site: unknown;
@@ -15,6 +16,12 @@ export type ContentBundle = {
   skills: unknown;
 };
 
+export type PendingMedia = {
+  path: string; // e.g. public/images/photos/foo.jpg
+  base64: string; // raw base64, no data: prefix
+  contentType: string;
+};
+
 export function getGithubToken() {
   if (typeof window === "undefined") return "";
   return localStorage.getItem(TOKEN_KEY) ?? "";
@@ -26,6 +33,24 @@ export function setGithubToken(token: string) {
 
 export function clearGithubToken() {
   localStorage.removeItem(TOKEN_KEY);
+}
+
+export function getPendingMedia(): PendingMedia[] {
+  if (typeof window === "undefined") return [];
+  try {
+    return JSON.parse(localStorage.getItem(PENDING_MEDIA_KEY) ?? "[]") as PendingMedia[];
+  } catch {
+    return [];
+  }
+}
+
+export function addPendingMedia(item: PendingMedia) {
+  const next = [...getPendingMedia().filter((m) => m.path !== item.path), item];
+  localStorage.setItem(PENDING_MEDIA_KEY, JSON.stringify(next));
+}
+
+export function clearPendingMedia() {
+  localStorage.removeItem(PENDING_MEDIA_KEY);
 }
 
 function toFiles(bundle: ContentBundle): Record<string, string> {
@@ -69,20 +94,74 @@ async function gh<T>(
   return res.json() as Promise<T>;
 }
 
+function safeFileName(name: string) {
+  return name
+    .toLowerCase()
+    .replace(/\.[^.]+$/, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "")
+    .slice(0, 48);
+}
+
+/** Read a browser File into base64 + a repo path under public/images/photos. */
+export async function fileToPendingMedia(
+  file: File,
+  folder = "public/images/photos",
+): Promise<{ media: PendingMedia; publicSrc: string }> {
+  const maxBytes = 4.5 * 1024 * 1024;
+  if (file.size > maxBytes) {
+    throw new Error("Image is larger than 4.5MB. Compress it or choose a smaller photo.");
+  }
+  if (!file.type.startsWith("image/")) {
+    throw new Error("Please choose an image file (JPG, PNG, WebP).");
+  }
+
+  const ext =
+    file.type === "image/png"
+      ? "png"
+      : file.type === "image/webp"
+        ? "webp"
+        : file.type === "image/gif"
+          ? "gif"
+          : "jpg";
+
+  const base64 = await new Promise<string>((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = String(reader.result ?? "");
+      const raw = result.includes(",") ? result.split(",")[1] : result;
+      resolve(raw);
+    };
+    reader.onerror = () => reject(new Error("Could not read file"));
+    reader.readAsDataURL(file);
+  });
+
+  const stamp = Date.now().toString(36);
+  const path = `${folder}/${stamp}-${safeFileName(file.name) || "photo"}.${ext}`;
+  const publicSrc = `/${path.replace(/^public\//, "")}`;
+
+  return {
+    media: { path, base64, contentType: file.type },
+    publicSrc,
+  };
+}
+
 /**
- * Commits all content JSON files to main in one commit via the Git Data API.
+ * Commits content JSON + any pending media files to main in one commit.
  * GitHub Actions then rebuilds Pages (~1–2 minutes).
  */
 export async function publishContentToGithub(
   bundle: ContentBundle,
   message = "content: update site from admin CMS",
-): Promise<{ commitUrl: string; sha: string }> {
+): Promise<{ commitUrl: string; sha: string; mediaCount: number }> {
   const token = getGithubToken();
   if (!token) {
     throw new Error("Add a GitHub token in Publish settings first.");
   }
 
-  const files = toFiles(bundle);
+  const textFiles = toFiles(bundle);
+  const media = getPendingMedia();
+
   const ref = await gh<{ object: { sha: string } }>(
     `/repos/${OWNER}/${REPO}/git/ref/heads/${BRANCH}`,
     token,
@@ -93,8 +172,8 @@ export async function publishContentToGithub(
     token,
   );
 
-  const blobs = await Promise.all(
-    Object.entries(files).map(async ([path, content]) => {
+  const textBlobs = await Promise.all(
+    Object.entries(textFiles).map(async ([path, content]) => {
       const blob = await gh<{ sha: string }>(
         `/repos/${OWNER}/${REPO}/git/blobs`,
         token,
@@ -112,6 +191,25 @@ export async function publishContentToGithub(
     }),
   );
 
+  const mediaBlobs = await Promise.all(
+    media.map(async (m) => {
+      const blob = await gh<{ sha: string }>(
+        `/repos/${OWNER}/${REPO}/git/blobs`,
+        token,
+        {
+          method: "POST",
+          body: JSON.stringify({ content: m.base64, encoding: "base64" }),
+        },
+      );
+      return {
+        path: m.path,
+        mode: "100644" as const,
+        type: "blob" as const,
+        sha: blob.sha,
+      };
+    }),
+  );
+
   const tree = await gh<{ sha: string }>(
     `/repos/${OWNER}/${REPO}/git/trees`,
     token,
@@ -119,7 +217,7 @@ export async function publishContentToGithub(
       method: "POST",
       body: JSON.stringify({
         base_tree: baseCommit.tree.sha,
-        tree: blobs,
+        tree: [...textBlobs, ...mediaBlobs],
       }),
     },
   );
@@ -142,7 +240,13 @@ export async function publishContentToGithub(
     body: JSON.stringify({ sha: commit.sha }),
   });
 
-  return { commitUrl: commit.html_url, sha: commit.sha };
+  clearPendingMedia();
+
+  return {
+    commitUrl: commit.html_url,
+    sha: commit.sha,
+    mediaCount: media.length,
+  };
 }
 
 export const githubPublishMeta = {
