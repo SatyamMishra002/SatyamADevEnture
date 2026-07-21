@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import type { Photo } from "@/types";
+import { withBasePath } from "@/lib/paths";
 import { Reveal } from "@/components/ui/Reveal";
 
 const MODES = ["All", "landscape", "portrait", "night"] as const;
@@ -92,7 +93,7 @@ export function PhotoGallery({ photos }: { photos: Photo[] }) {
               className="group w-full text-left"
             >
               <img
-                src={photo.src}
+                src={withBasePath(photo.src)}
                 alt={photo.title}
                 className={`w-full rounded-sm object-cover transition duration-500 group-hover:opacity-90 ${
                   photo.mode === "portrait" ? "aspect-[3/4]" : "aspect-[4/3]"
@@ -136,7 +137,7 @@ export function PhotoGallery({ photos }: { photos: Photo[] }) {
             onClick={(e) => e.stopPropagation()}
           >
             <img
-              src={active.src}
+              src={withBasePath(active.src)}
               alt={active.title}
               className="max-h-[75vh] w-full rounded-sm object-contain"
             />

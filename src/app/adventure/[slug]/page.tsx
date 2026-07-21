@@ -5,6 +5,7 @@ import { AppShell } from "@/components/layout/AppShell";
 import { Reveal } from "@/components/ui/Reveal";
 import { TextLink } from "@/components/ui/TextLink";
 import { getAdventure, getAdventures } from "@/lib/content";
+import { withBasePath } from "@/lib/paths";
 import { formatDate } from "@/lib/utils";
 
 export function generateStaticParams() {
@@ -72,7 +73,7 @@ export default async function AdventureJournalPage({
         <Reveal delay={0.08}>
           <div className="mt-12 overflow-hidden rounded-sm">
             <img
-              src={trip.cover}
+              src={withBasePath(trip.cover)}
               alt={trip.title}
               className="aspect-[21/9] w-full object-cover"
             />
@@ -115,7 +116,7 @@ export default async function AdventureJournalPage({
                     {trip.gallery.map((src) => (
                       <img
                         key={src}
-                        src={src}
+                        src={withBasePath(src)}
                         alt=""
                         className="aspect-[4/3] w-full rounded-sm object-cover"
                       />
@@ -175,7 +176,7 @@ export default async function AdventureJournalPage({
                     className="group block"
                   >
                     <img
-                      src={a.cover}
+                      src={withBasePath(a.cover)}
                       alt=""
                       className="aspect-[16/10] w-full rounded-sm object-cover transition duration-500 group-hover:opacity-90"
                     />

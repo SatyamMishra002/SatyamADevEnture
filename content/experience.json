@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "id": "e1",
+    "company": "Parag Parikh Financial Advisory Services",
+    "role": "Assistant Manager – Python Developer",
+    "location": "Mumbai · India",
+    "start": "2025-08",
+    "end": null,
+    "summary": "Building production AI and full-stack platforms for wealth operations — Account Aggregator data, RAG chat for relationship managers, inventory workflows, and distribution master data.",
+    "highlights": [
+      "Wealth Intelligence Dashboard with Account Aggregator consent flows and multi-asset aggregation (MF, equity, FD, insurance) plus drill-down insights",
+      "Embedded financial chatbot with RAG (LangChain, FAISS, Qwen-13B) for grounded questions like net worth and fund exposure",
+      "Next.js + React frontend with FastAPI backend for secure tokens, AA response normalization, and interactive graphs",
+      "Inventory Management System with multi-tier approvals, digital collateral versioning (image/video/PPT/PDF), and admin reporting",
+      "Distributor Contact Master Portal with multi-level filters (zone, state, city, AUM, type) on Django + MySQL",
+      "Desktop automation with Selenium + PyTkinter that compressed multi-hour manual jobs to seconds"
+    ],
+    "tech": ["Python", "FastAPI", "Next.js", "React", "LangChain", "FAISS", "Qwen-13B", "MySQL", "Flask", "Django", "Docker", "Selenium"]
+  },
+  {
+    "id": "e2",
+    "company": "Larsen & Toubro – PESIc",
+    "role": "Python Developer",
+    "location": "India",
+    "start": "2024-12",
+    "end": "2025-08",
+    "summary": "Shipped production ticketing and digital-tracking platforms with RAG chat, ML wait-time prediction, and operator-facing admin tools.",
+    "highlights": [
+      "End-to-end ticketing system with RAG chatbot on a fine-tuned 7B LLM, FAISS category retrieval, and WebSocket live chat",
+      "Feedback loop + admin panel for category/document management and multi-document ingestion",
+      "ML models (Random Forest, Linear Regression) to predict ticket resolution time",
+      "Digital solutions tracking web platform replacing PowerPoint-heavy reporting (Flask, SQL Server)"
+    ],
+    "tech": ["FastAPI", "PyTorch", "FAISS", "WebSockets", "scikit-learn", "Flask", "SQL Server", "JavaScript"]
+  },
+  {
+    "id": "e3",
+    "company": "Global Tenders Services Pvt. Ltd.",
+    "role": "Python Developer",
+    "location": "India",
+    "start": "2024-03",
+    "end": "2024-12",
+    "summary": "Enterprise scraping and extraction tooling — captcha-aware collectors and XPath helper workflows for content teams.",
+    "highlights": [
+      "Automated web scraper with OpenCV + Tesseract captcha bypass and dynamic IP rotation (~27% efficiency gain)",
+      "Cross-platform XPath collection tool injecting JS/CSS for interactive extraction (~50% content-team efficiency gain)"
+    ],
+    "tech": ["Python", "Selenium", "OpenCV", "Tesseract", "Flask", "Pandas", "Tkinter", "SQL"]
+  }
+]

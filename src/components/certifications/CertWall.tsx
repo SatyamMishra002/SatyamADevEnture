@@ -3,6 +3,7 @@
 import { useEffect, useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { Certificate } from "@/types";
+import { withBasePath } from "@/lib/paths";
 import { formatDate } from "@/lib/utils";
 
 export function CertWall({
@@ -49,7 +50,7 @@ export function CertWall({
               <div className="relative aspect-[4/3] overflow-hidden border border-border bg-bg-card transition duration-500 group-hover:border-border-strong">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={cert.image}
+                  src={withBasePath(cert.image)}
                   alt={cert.title}
                   className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]"
                 />
@@ -107,7 +108,7 @@ export function CertWall({
               <div className="relative aspect-[16/10] overflow-hidden rounded-lg border border-border bg-bg-card">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={active.image}
+                  src={withBasePath(active.image)}
                   alt={active.title}
                   className="h-full w-full object-contain"
                 />

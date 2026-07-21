@@ -1,1 +1,176 @@
-[]
+[
+  {
+    "id": "p1",
+    "slug": "genai-chatbot",
+    "title": "GenAI Chatbot (RAG)",
+    "subtitle": "Document Q&A with semantic search — personal production-style build",
+    "summary": "AI-powered chatbot with RAG for document Q&A and semantic search. Public repo exploring retrieval, grounding, and chat UX patterns I also use in enterprise work.",
+    "cover": "/images/projects/neural-pipeline.svg",
+    "gallery": [
+      "/images/projects/neural-pipeline-1.svg",
+      "/images/projects/neural-pipeline-2.svg"
+    ],
+    "status": "published",
+    "featured": true,
+    "year": 2025,
+    "role": "Solo engineer",
+    "timeline": [
+      { "label": "Prototype", "date": "2025" },
+      { "label": "Public repo", "date": "2025" }
+    ],
+    "problem": "Teams need answers from their own documents — not generic chat that hallucinates policy or process.",
+    "motivation": "I wanted a clean personal sandbox for RAG: ingest → embed → retrieve → answer, so enterprise lessons stayed sharp outside office codebases.",
+    "architecture": "Python RAG pipeline with document ingestion, embeddings, vector retrieval, and a chat interface for grounded Q&A. Designed so category/document management and evaluation can grow without rewriting the core loop.",
+    "challenges": [
+      "Keeping answers faithful to retrieved chunks",
+      "Balancing recall vs precision in semantic search",
+      "Making the chat path understandable for non-ML users"
+    ],
+    "performance": [
+      "Semantic retrieval over uploaded/document corpora",
+      "Focused on grounded responses rather than open-ended generation"
+    ],
+    "lessons": [
+      "Retrieval quality dominates prompt cleverness",
+      "Operator-facing controls matter even in personal tools"
+    ],
+    "future": [
+      "Richer evaluation harness",
+      "Multi-collection routing"
+    ],
+    "stats": [
+      { "label": "GitHub ★", "value": "4" },
+      { "label": "Focus", "value": "RAG" }
+    ],
+    "tech": ["Python", "RAG", "Embeddings", "Semantic Search"],
+    "github": "https://github.com/SatyamMishra002/GenAi_chatbot",
+    "tags": ["AI", "RAG", "Personal"]
+  },
+  {
+    "id": "p2",
+    "slug": "ai-mock-interviewer",
+    "title": "AI Mock Interviewer",
+    "subtitle": "Resume-aware practice rounds with feedback and scoring",
+    "summary": "Upload a résumé, practice personalized interview rounds, and get instant feedback — a personal product experiment in applied LLMs for career prep.",
+    "cover": "/images/projects/signalboard.svg",
+    "gallery": ["/images/projects/signalboard.svg"],
+    "status": "published",
+    "featured": true,
+    "year": 2025,
+    "role": "Solo engineer",
+    "timeline": [
+      { "label": "Build", "date": "2025" }
+    ],
+    "problem": "Interview prep is generic. Candidates need questions shaped by their actual résumé and role target.",
+    "motivation": "Apply conversational AI beyond internal ops — help people rehearse with structure and scoring.",
+    "architecture": "Python app that ingests résumé context, generates role-aware interview rounds, and returns feedback/scoring after responses.",
+    "challenges": [
+      "Personalizing questions without leaking irrelevant noise",
+      "Useful feedback that is specific, not vague praise"
+    ],
+    "performance": [
+      "End-to-end flow: upload → practice → score"
+    ],
+    "lessons": [
+      "Product framing matters as much as the model call"
+    ],
+    "future": [
+      "Deeper scoring rubrics",
+      "Domain packs (backend, ML, finance)"
+    ],
+    "stats": [
+      { "label": "Type", "value": "Personal" },
+      { "label": "Stack", "value": "Python + LLM" }
+    ],
+    "tech": ["Python", "LLMs", "Resume parsing"],
+    "github": "https://github.com/SatyamMishra002/AI_Mock_Interviewer",
+    "tags": ["AI", "Product", "Personal"]
+  },
+  {
+    "id": "p3",
+    "slug": "wealth-intelligence-rag",
+    "title": "Wealth Intelligence + AI Chat",
+    "subtitle": "Account Aggregator dashboard with grounded financial Q&A",
+    "summary": "At Parag Parikh: full-stack wealth dashboard over AA APIs, unified multi-asset views, and a RAG chatbot (LangChain, FAISS, Qwen-13B) for relationship managers.",
+    "cover": "/images/projects/scrapecraft.svg",
+    "gallery": ["/images/projects/scrapecraft-1.svg"],
+    "status": "published",
+    "featured": true,
+    "year": 2025,
+    "role": "Assistant Manager – Python Developer",
+    "timeline": [
+      { "label": "Architecture", "date": "2025" },
+      { "label": "Production use", "date": "2025–Present" }
+    ],
+    "problem": "Client wealth data lived across statements and asset classes. RMs needed consent-safe aggregation and natural-language answers without manual spreadsheet archaeology.",
+    "motivation": "Bring Account Aggregator data and conversational AI into one calm operational surface.",
+    "architecture": "Next.js/React client + FastAPI services for AA consent/token flows and normalization. Holdings across MF, equities, FDs, insurance surface in graphs and drill-downs. RAG over live client context via LangChain + FAISS + Qwen-13B for questions like net worth or fund exposure. MySQL + Docker for deployable services.",
+    "challenges": [
+      "Secure consent and token lifecycle with AA APIs",
+      "Normalizing heterogeneous AA payloads into reliable insights",
+      "Keeping chatbot answers data-grounded for financial conversations"
+    ],
+    "performance": [
+      "Unified multi-asset views for RM workflows",
+      "Instant grounded responses for common portfolio questions"
+    ],
+    "lessons": [
+      "In finance, auditability and consent are product features",
+      "RAG must cite the portfolio truth, not approximate it"
+    ],
+    "future": [
+      "Broader evaluation on RM question sets",
+      "Deeper alerting on portfolio change narratives"
+    ],
+    "stats": [
+      { "label": "LLM", "value": "Qwen-13B" },
+      { "label": "Retrieval", "value": "FAISS" },
+      { "label": "API", "value": "Account Aggregator" }
+    ],
+    "tech": ["Next.js", "React", "FastAPI", "LangChain", "Qwen-13B", "FAISS", "MySQL", "Docker"],
+    "tags": ["AI", "FinTech", "RAG", "Work"]
+  },
+  {
+    "id": "p4",
+    "slug": "lt-ticketing-rag",
+    "title": "Ticketing Platform + RAG Chat",
+    "subtitle": "Fine-tuned 7B assistant for document-grounded support",
+    "summary": "At L&T PESIc: production ticketing with embedded RAG chatbot, FAISS retrieval, WebSocket chat, admin document management, plus ML for resolution-time prediction.",
+    "cover": "/images/projects/neural-pipeline.svg",
+    "gallery": [],
+    "status": "published",
+    "featured": false,
+    "year": 2025,
+    "role": "Python Developer",
+    "timeline": [
+      { "label": "Build", "date": "Dec 2024" },
+      { "label": "Iterate", "date": "2025" }
+    ],
+    "problem": "Support teams needed faster, document-aware answers inside the ticketing flow — not a separate knowledge wiki nobody opens.",
+    "motivation": "Put RAG where the work already happens: tickets, live chat, and admin-managed corpora.",
+    "architecture": "FastAPI services, fine-tuned 7B LLM, FAISS category-based retrieval, WebSocket live chat with async concurrency, admin panel for categories/documents, ingestion for multiple document types. Companion ML models (Random Forest / Linear Regression) estimate resolution time.",
+    "challenges": [
+      "Stable retrieval across categories under concurrent chat",
+      "Feedback loops that actually improve the model over time",
+      "Admin UX for non-ML operators"
+    ],
+    "performance": [
+      "Real-time WebSocket chat for concurrent users",
+      "Category-efficient FAISS retrieval"
+    ],
+    "lessons": [
+      "Fine-tuning helps when the domain language is sticky",
+      "Prediction models build trust when wait times are visible"
+    ],
+    "future": [
+      "Richer offline evaluation",
+      "Tighter coupling between feedback and retraining cadence"
+    ],
+    "stats": [
+      { "label": "Model", "value": "7B FT" },
+      { "label": "Chat", "value": "WebSockets" }
+    ],
+    "tech": ["FastAPI", "PyTorch", "FAISS", "WebSockets", "scikit-learn", "JavaScript"],
+    "tags": ["AI", "RAG", "Work"]
+  }
+]

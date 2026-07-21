@@ -5,6 +5,7 @@ import { AppShell } from "@/components/layout/AppShell";
 import { Reveal } from "@/components/ui/Reveal";
 import { TextLink } from "@/components/ui/TextLink";
 import { getProject, getProjects } from "@/lib/content";
+import { withBasePath } from "@/lib/paths";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -109,7 +110,7 @@ export default async function ProjectCaseStudyPage({ params }: Props) {
           <div className="relative mb-8 aspect-[16/9] overflow-hidden border border-border bg-bg-card">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={project.cover}
+              src={withBasePath(project.cover)}
               alt={project.title}
               className="h-full w-full object-cover"
             />
@@ -164,7 +165,7 @@ export default async function ProjectCaseStudyPage({ params }: Props) {
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src={src}
+                    src={withBasePath(src)}
                     alt={`${project.title} screenshot ${i + 1}`}
                     className="h-full w-full object-cover"
                   />

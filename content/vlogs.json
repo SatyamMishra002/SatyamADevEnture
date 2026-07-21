@@ -1,39 +1,15 @@
 [
   {
     "id": "v1",
-    "slug": "ridge-before-dawn",
-    "title": "Ridge Before Dawn",
-    "description": "A quiet hike to Triund — packing light, chasing soft light, and learning to film without rushing.",
-    "thumbnail": "/images/vlogs/ridge.svg",
-    "youtubeId": "dQw4w9WgXcQ",
+    "slug": "coming-soon",
+    "title": "Trail films — soon",
+    "description": "Short films from Kedarnath, Sahyadri forts, and desk-to-trail weeks will land here. No placeholder YouTube embeds — only real uploads when ready.",
+    "thumbnail": "/images/adventure/kedarnath.svg",
+    "youtubeId": "",
     "category": "Adventure",
-    "publishedAt": "2025-04-20",
-    "duration": "12:48",
-    "likes": 1284,
+    "publishedAt": "2025-01-01",
+    "duration": "—",
+    "likes": 0,
     "featured": true
-  },
-  {
-    "id": "v2",
-    "slug": "desk-to-trail",
-    "title": "Desk to Trail",
-    "description": "How I reset after deep work weeks — fitness, packing, and the first hour of trail silence.",
-    "thumbnail": "/images/vlogs/desk-trail.svg",
-    "youtubeId": "dQw4w9WgXcQ",
-    "category": "Lifestyle",
-    "publishedAt": "2025-02-08",
-    "duration": "08:21",
-    "likes": 642
-  },
-  {
-    "id": "v3",
-    "slug": "building-in-public",
-    "title": "Building in Public",
-    "description": "A behind-the-scenes look at shipping a FastAPI service — from notebook to production.",
-    "thumbnail": "/images/vlogs/building.svg",
-    "youtubeId": "dQw4w9WgXcQ",
-    "category": "Engineering",
-    "publishedAt": "2024-12-14",
-    "duration": "15:03",
-    "likes": 2103
   }
 ]

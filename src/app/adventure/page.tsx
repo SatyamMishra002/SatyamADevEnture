@@ -5,6 +5,7 @@ import { MountainHero } from "@/components/adventure/MountainHero";
 import { Reveal } from "@/components/ui/Reveal";
 import { TextLink } from "@/components/ui/TextLink";
 import { getAdventures, getExtras, getSite } from "@/lib/content";
+import { withBasePath } from "@/lib/paths";
 import { formatDate } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -39,7 +40,7 @@ export default function AdventurePage() {
             <span className="text-text-muted">rewrites the week.</span>
           </>
         }
-        subtitle={`Journals from ${site.location} and beyond — ridges before dawn, high-desert light, and the soft reset of rain.`}
+        subtitle={`Jyotirlinga yatra (11/12), Kedarnath, and Sahyadri forts from a Mumbai base — ${site.city}.`}
       />
 
       <div className="mx-auto max-w-6xl px-6 pb-28">
@@ -63,7 +64,7 @@ export default function AdventurePage() {
                   >
                     <div className="overflow-hidden rounded-sm">
                       <img
-                        src={trip.cover}
+                        src={withBasePath(trip.cover)}
                         alt=""
                         className="aspect-[16/10] w-full object-cover transition duration-700 group-hover:scale-[1.03]"
                       />

@@ -1,102 +1,108 @@
 {
   "journey": [
     {
-      "year": "2019",
-      "title": "First line of Python",
-      "text": "Automation scripts for mundane tasks. Discovered that code could buy back time — and curiosity."
-    },
-    {
       "year": "2021",
-      "title": "Backend as craft",
-      "text": "APIs, databases, and the quiet satisfaction of systems that just work. Django and FastAPI became home."
+      "title": "BCA — foundations",
+      "text": "Started Bachelor of Computer Application (2021–2024). Python stopped being a subject and became a way to turn messy work into systems."
     },
     {
-      "year": "2023",
-      "title": "Into intelligence",
-      "text": "Machine learning stopped being a buzzword and became a toolkit — models, pipelines, and responsible design."
+      "year": "2024",
+      "title": "Global Tenders — scraping at scale",
+      "text": "First professional chapter as a Python developer: Selenium pipelines, OpenCV/Tesseract for captcha-heavy flows, and tools that made content teams faster."
+    },
+    {
+      "year": "2024–2025",
+      "title": "Larsen & Toubro PESIc — AI into operations",
+      "text": "Moved from automation into production AI: a RAG ticketing chatbot with a fine-tuned 7B model, FAISS retrieval, WebSockets, and ML for resolution-time prediction."
     },
     {
       "year": "2025",
-      "title": "Systems + stories",
-      "text": "Building products by day. Collecting mountains, light, and journals by weekend. Both feed the work."
+      "title": "Parag Parikh — wealth systems + RAG",
+      "text": "As Assistant Manager – Python Developer, building Account Aggregator wealth dashboards, conversational finance Q&A with Qwen-13B + FAISS, and ops platforms for inventory and distribution."
     }
   ],
   "lessons": [
-    "Clarity beats cleverness — every time.",
-    "Ship the smallest honest version first.",
-    "Documentation is kindness to your future self.",
-    "Nature resets the quality of thinking.",
-    "Constraints are creative fuel, not cages."
+    "Production RAG is less about demos and more about grounding, latency, and trust.",
+    "Automation that saves hours beats clever code that nobody runs.",
+    "Clear consent and audit trails matter as much as model quality in financial systems.",
+    "Trekking teaches the same discipline as shipping: pace, preparation, turn-back judgement.",
+    "Document the evaluation loop — feedback from real users is the best dataset."
   ],
   "beliefs": [
-    "Software should feel invisible when it works.",
-    "Personality belongs in professional work.",
-    "Learning in public compounds faster.",
-    "Adventure is research for better judgement."
+    "AI should answer from data, not invent confidence.",
+    "Backend craft is quiet reliability under load.",
+    "Personality belongs beside the résumé — trails and yatras shape how I build.",
+    "Ship vertical slices: consent → data → insight → conversation."
   ],
   "howIWork": [
-    "Start with the problem, not the framework.",
-    "Prefer boring technology for critical paths.",
-    "Measure before optimizing.",
-    "Write for the next engineer — including yourself.",
-    "Protect deep work like a calendar ritual."
+    "Start from the user question and the source of truth.",
+    "Prefer FastAPI/Django for critical paths; keep the stack boring where it must not fail.",
+    "Measure retrieval quality before tuning prompts.",
+    "Build admin panels early — operators need visibility.",
+    "Protect deep work; weekends on trails reset judgement."
   ],
   "workflow": [
-    { "step": "Morning", "detail": "Clear inbox, one priority, coffee, deep focus block." },
-    { "step": "Build", "detail": "Implement, test, commit small. Prefer vertical slices." },
-    { "step": "Review", "detail": "Read the diff as a stranger. Simplify ruthlessly." },
-    { "step": "Evening", "detail": "Walk, train, or shoot. Let the subconscious compile." }
+    { "step": "Morning", "detail": "Prioritize production issues, then one AI/backend vertical slice." },
+    { "step": "Build", "detail": "API contracts, retrieval tests, UI for the path a real user takes." },
+    { "step": "Review", "detail": "Check grounding, security of tokens/consent, and failure modes." },
+    { "step": "Reset", "detail": "Trek, shrine, or a long walk — then return with clearer systems thinking." }
   ],
   "goals": [
-    "Ship production AI systems with clear evaluation loops.",
-    "Master systems design for high-throughput APIs.",
-    "Publish thoughtful long-form writing monthly.",
-    "Document one mountain journey with full photo stories."
+    "Deepen production RAG and LLM fine-tuning for domain workflows.",
+    "Keep shipping FastAPI systems that stay calm under concurrent users.",
+    "Complete the twelfth Jyotirlinga — Ramanathaswamy, Rameswaram.",
+    "Document treks and engineering lessons in the same honest voice."
   ],
-  "vision": "A life where engineering precision and outdoor wonder reinforce each other — building calm, durable software while staying close to mountains, cameras, and continuous learning.",
+  "vision": "A career where enterprise AI systems and Himalayan/Sahyadri trails reinforce each other — precise software, durable judgement, and a life that still moves outdoors.",
   "technologies": [
     "Python",
     "FastAPI",
+    "Flask",
     "Django",
-    "PostgreSQL",
-    "Redis",
+    "LangChain",
+    "FAISS",
     "PyTorch",
     "scikit-learn",
+    "Qwen / LLM fine-tuning",
+    "WebSockets",
+    "Next.js",
+    "React",
+    "MySQL",
+    "MSSQL",
     "Docker",
     "AWS",
-    "TypeScript",
-    "Next.js",
-    "Playwright"
+    "Selenium",
+    "Pandas"
   ],
   "books": [
     {
       "title": "Designing Data-Intensive Applications",
       "author": "Martin Kleppmann",
-      "note": "The systems bible — still reread chapters annually."
+      "note": "How reliable systems think — still the reference when pipelines grow."
+    },
+    {
+      "title": "Hands-On Machine Learning",
+      "author": "Aurélien Géron",
+      "note": "Practical ML intuition behind models we still ship."
     },
     {
       "title": "Atomic Habits",
       "author": "James Clear",
-      "note": "Compounding applies to code and climbing alike."
-    },
-    {
-      "title": "The Creative Act",
-      "author": "Rick Rubin",
-      "note": "Permission to trust taste over noise."
+      "note": "Compounding applies to commits and trekking mileage alike."
     }
   ],
   "workspace": [
-    "Minimal desk, warm lamp, one large monitor",
-    "Mechanical keyboard with soft switches",
-    "Notebook always open for architecture sketches",
-    "Standing sessions between deep focus blocks"
+    "Mumbai base — hybrid work with deep-focus blocks",
+    "FastAPI + notebook experiments side by side",
+    "Notebook for architecture sketches before code",
+    "Weekend packing list never far from the desk"
   ],
   "tools": [
     "VS Code / Cursor",
-    "iTerm + tmux",
-    "Notion for research",
-    "Linear for tasks",
-    "Figma for structure",
-    "Lightroom for photographs"
+    "Docker",
+    "Git / CI",
+    "MySQL clients",
+    "Power BI for analytics storytelling",
+    "Selenium tooling for automation"
   ]
 }

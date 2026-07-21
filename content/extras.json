@@ -1,21 +1,25 @@
 {
   "bucketList": [
-    { "place": "Ladakh Traverse", "status": "planned" },
+    { "place": "Rameswaram — Ramanathaswamy (12th Jyotirlinga)", "status": "planned" },
     { "place": "Everest Base Camp", "status": "dream" },
-    { "place": "Patagonia", "status": "dream" },
-    { "place": "Iceland Ring Road", "status": "planned" },
-    { "place": "Annapurna Circuit", "status": "done" }
+    { "place": "Spiti circuit", "status": "dream" },
+    { "place": "Valley of Flowers", "status": "planned" },
+    { "place": "Kedarnath", "status": "done" },
+    { "place": "Kalavantin Durga", "status": "done" },
+    { "place": "Rajgad", "status": "done" }
   ],
   "placesVisited": [
-    { "name": "Triund", "country": "India" },
-    { "name": "Spiti Valley", "country": "India" },
-    { "name": "Coorg", "country": "India" },
-    { "name": "Manali", "country": "India" },
-    { "name": "Goa", "country": "India" }
+    { "name": "Kedarnath", "country": "India" },
+    { "name": "Kalavantin Durga", "country": "India" },
+    { "name": "Rajgad", "country": "India" },
+    { "name": "Garbett Plateau", "country": "India" },
+    { "name": "Gorakhgad", "country": "India" },
+    { "name": "Sagargad", "country": "India" },
+    { "name": "Mumbai", "country": "India" }
   ],
   "readingList": [
-    { "title": "Staff Engineer", "author": "Will Larson", "status": "reading" },
-    { "title": "The Pragmatic Programmer", "author": "Hunt & Thomas", "status": "done" },
-    { "title": "Deep Work", "author": "Cal Newport", "status": "done" }
+    { "title": "Designing Data-Intensive Applications", "author": "Martin Kleppmann", "status": "reading" },
+    { "title": "Hands-On Machine Learning", "author": "Aurélien Géron", "status": "done" },
+    { "title": "Atomic Habits", "author": "James Clear", "status": "done" }
   ]
 }

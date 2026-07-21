@@ -5,6 +5,7 @@ import { AppShell } from "@/components/layout/AppShell";
 import { Reveal } from "@/components/ui/Reveal";
 import { TextLink } from "@/components/ui/TextLink";
 import { getVlog, getVlogs } from "@/lib/content";
+import { withBasePath } from "@/lib/paths";
 import { formatDate } from "@/lib/utils";
 
 export function generateStaticParams() {
@@ -80,13 +81,19 @@ export default async function VlogDetailPage({
         <Reveal delay={0.1}>
           <div className="mt-10 overflow-hidden rounded-sm border border-border">
             <div className="aspect-video w-full bg-bg-elevated">
-              <iframe
-                title={vlog.title}
-                src={`https://www.youtube.com/embed/${vlog.youtubeId}`}
-                className="h-full w-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+              {vlog.youtubeId ? (
+                <iframe
+                  title={vlog.title}
+                  src={`https://www.youtube.com/embed/${vlog.youtubeId}`}
+                  className="h-full w-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              ) : (
+                <div className="flex h-full items-center justify-center px-6 text-center text-text-muted">
+                  Video upload coming soon — no placeholder embeds.
+                </div>
+              )}
             </div>
           </div>
         </Reveal>
@@ -101,7 +108,7 @@ export default async function VlogDetailPage({
                 {relatedList.map((v) => (
                   <Link key={v.id} href={`/vlogs/${v.slug}/`} className="group block">
                     <img
-                      src={v.thumbnail}
+                      src={withBasePath(v.thumbnail)}
                       alt=""
                       className="aspect-video w-full rounded-sm object-cover transition group-hover:opacity-90"
                     />

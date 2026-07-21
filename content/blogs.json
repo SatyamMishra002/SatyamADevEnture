@@ -1,37 +1,29 @@
 [
   {
     "id": "b1",
-    "slug": "calm-apis",
-    "title": "Designing Calm APIs",
-    "excerpt": "APIs should feel like a good hotel lobby — quiet, predictable, and never surprising for the wrong reasons.",
+    "slug": "rag-in-production",
+    "title": "What Production RAG Actually Demands",
+    "excerpt": "Demos forgive hallucination. Relationship managers and ticket queues do not. Notes from shipping grounded chat at work.",
     "cover": "/images/blog/calm-apis.svg",
-    "date": "2025-05-02",
+    "date": "2025-10-01",
     "category": "Engineering",
-    "tags": [
-      "FastAPI",
-      "Design",
-      "Backend"
-    ],
-    "readingTime": "7 min",
+    "tags": ["RAG", "FastAPI", "LLMs"],
+    "readingTime": "6 min",
     "status": "published",
     "featured": true,
-    "content": "# Designing Calm APIs\n\nThe best interfaces disappear. Users should spend attention on outcomes, not on decoding your error shapes.\n\n## Start with verbs and nouns\n\nName resources like a careful librarian. Prefer `/predictions` over `/runModelNow`.\n\n## Errors as documentation\n\nReturn structured errors with a stable `code`, a human `message`, and a `hint` when recovery is possible.\n\n```python\nreturn JSONResponse(\n    status_code=422,\n    content={\n        \"code\": \"invalid_feature\",\n        \"message\": \"Feature vector length mismatch\",\n        \"hint\": \"Expected 128 dimensions\",\n    },\n)\n```\n\n## Latency budgets\n\nPublish your p95. Treat regressions as defects. Calm systems are measured systems.\n\n## Closing\n\nRestraint is a backend skill. Ship less surface area, more reliability."
+    "content": "# What Production RAG Actually Demands\n\nI have shipped RAG in places where a wrong answer is not a shrug — wealth questions for relationship managers, and document chat inside ticketing.\n\n## Grounding beats eloquence\n\nIf the retrieved chunks are weak, no prompt saves you. FAISS, clean chunking, and category filters did more for trust than clever wording.\n\n## Operators need a panel\n\nAdmin surfaces for documents and categories are not extras. They are how the system stays honest after launch.\n\n## Feedback is a feature\n\nAt L&T we treated user feedback as part of the loop for a fine-tuned 7B model. Models drift; processes should not.\n\n## Closing\n\nProduction RAG is backend engineering with a retrieval conscience."
   },
   {
     "id": "b2",
-    "slug": "mountains-and-models",
-    "title": "What Mountains Taught Me About Models",
-    "excerpt": "Altitude changes how you plan. So does production ML. Both punish optimism without preparation.",
-    "date": "2025-03-11",
+    "slug": "trails-and-tokens",
+    "title": "Trails Teach the Same Discipline as Deploys",
+    "excerpt": "Kalavantin’s steps and a failing deploy share a lesson: panic makes you slip. Pace is a skill.",
+    "date": "2025-06-01",
     "category": "Essay",
-    "tags": [
-      "ML",
-      "Adventure",
-      "Mindset"
-    ],
-    "readingTime": "5 min",
+    "tags": ["Adventure", "Mindset"],
+    "readingTime": "4 min",
     "status": "published",
     "featured": true,
-    "content": "# What Mountains Taught Me About Models\n\nOn a ridge, weather shifts faster than dashboards. You pack layers. You turn around when pride argues with risk.\n\n## Pack for failure modes\n\nModels fail. Networks fail. Humans get tired. Design fallbacks before you need them.\n\n## Respect the environment\n\nTraining metrics are not the trail. Production data is the weather.\n\n## Move slow to go far\n\nSmall, honest iterations beat heroic overnight climbs."
+    "content": "# Trails Teach the Same Discipline as Deploys\n\nOn Kalavantin Durga the last metres are rock-cut and exposed. You do not rush a foothold to impress anyone.\n\n## Turn-back judgement\n\nKedarnath weather and production incidents both reward the humility to pause.\n\n## Eleven shrines, one remaining\n\nThe Jyotirlinga yatra left Rameswaram ahead on purpose. Unfinished work can be sacred — in code and on the map.\n\n## Closing\n\nI want systems that stay calm. Trails are where I practice that before Monday."
   }
 ]

@@ -4,6 +4,7 @@ export type SiteSettings = {
   tagline: string;
   description: string;
   email: string;
+  phone?: string;
   location: string;
   city: string;
   availability: string;

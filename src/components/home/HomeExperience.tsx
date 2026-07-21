@@ -10,6 +10,7 @@ import { ContributionGraph } from "@/components/home/ContributionGraph";
 import { Reveal } from "@/components/ui/Reveal";
 import { TextLink } from "@/components/ui/TextLink";
 import { MagneticButton } from "@/components/ui/MagneticButton";
+import { withBasePath } from "@/lib/paths";
 
 export function HomeExperience({
   site,
@@ -67,8 +68,7 @@ export function HomeExperience({
             transition={{ duration: 1, delay: 0.35 }}
             className="mt-8 max-w-xl text-lg text-text-muted"
           >
-            {site.tagline} A Python developer working at the intersection of
-            intelligence, infrastructure, and the outdoors.
+            {site.tagline}
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -162,7 +162,7 @@ export function HomeExperience({
             <Link href={`/projects/${latestProject.slug}/`} className="group block overflow-hidden rounded-3xl border border-border">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={latestProject.cover}
+                src={withBasePath(latestProject.cover)}
                 alt={latestProject.title}
                 className="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-[1.03]"
               />
@@ -217,7 +217,7 @@ export function HomeExperience({
             </div>
             <Link href="/photography/" className="overflow-hidden rounded-3xl border border-border">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={photo.src} alt={photo.title} className="aspect-[16/10] w-full object-cover" />
+              <img src={withBasePath(photo.src)} alt={photo.title} className="aspect-[16/10] w-full object-cover" />
             </Link>
           </div>
         </Reveal>

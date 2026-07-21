@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import type { Vlog } from "@/types";
+import { withBasePath } from "@/lib/paths";
 import { formatDate } from "@/lib/utils";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -70,14 +71,21 @@ export function VlogsExperience({
       <Reveal>
         <div className="overflow-hidden rounded-sm border border-border bg-bg-elevated">
           <div className="aspect-video w-full bg-bg">
-            <iframe
-              title={feature.title}
-              src={`https://www.youtube.com/embed/${feature.youtubeId}`}
-              className="h-full w-full"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              onLoad={() => markWatched(feature.id)}
-            />
+            {feature.youtubeId ? (
+              <iframe
+                title={feature.title}
+                src={`https://www.youtube.com/embed/${feature.youtubeId}`}
+                className="h-full w-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                onLoad={() => markWatched(feature.id)}
+              />
+            ) : (
+              <div className="flex h-full flex-col items-center justify-center gap-3 px-6 text-center">
+                <p className="font-display text-2xl text-text">{feature.title}</p>
+                <p className="max-w-md text-sm text-text-muted">{feature.description}</p>
+              </div>
+            )}
           </div>
           <div className="flex flex-wrap items-end justify-between gap-4 p-6 md:p-8">
             <div>
@@ -132,7 +140,7 @@ export function VlogsExperience({
             <Link href={`/vlogs/${v.slug}/`} className="group block">
               <div className="relative overflow-hidden rounded-sm">
                 <img
-                  src={v.thumbnail}
+                  src={withBasePath(v.thumbnail)}
                   alt=""
                   className="aspect-video w-full object-cover transition duration-500 group-hover:scale-[1.03]"
                 />

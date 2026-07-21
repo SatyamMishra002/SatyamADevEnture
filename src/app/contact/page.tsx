@@ -67,6 +67,19 @@ export default function ContactPage() {
                   </a>
                 </dd>
               </div>
+              {site.phone && (
+                <div>
+                  <dt className="text-sm text-text-muted">Phone</dt>
+                  <dd className="mt-2">
+                    <a
+                      href={`tel:${site.phone.replace(/\s/g, "")}`}
+                      className="font-display text-2xl text-text transition hover:text-accent"
+                    >
+                      {site.phone}
+                    </a>
+                  </dd>
+                </div>
+              )}
               <div>
                 <dt className="text-sm text-text-muted">Location</dt>
                 <dd className="mt-2 text-lg text-text">

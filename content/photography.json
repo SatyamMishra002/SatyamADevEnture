@@ -1,97 +1,55 @@
 [
   {
     "id": "ph1",
-    "title": "First Light, Dhauladhar",
-    "src": "/images/photos/dhauladhar.svg",
-    "collection": "Mountains",
+    "title": "Kedarnath light",
+    "src": "/images/adventure/kedarnath.svg",
+    "collection": "Himalaya",
     "mode": "landscape",
     "favorite": true,
-    "location": "Triund, HP",
+    "location": "Kedarnath, Uttarakhand",
     "exif": {
-      "camera": "Sony A7C",
-      "lens": "24-70mm f/2.8",
-      "aperture": "f/8",
-      "shutter": "1/200s",
-      "iso": "100",
-      "focal": "35mm"
+      "camera": "Trail camera — replace with your EXIF"
     }
   },
   {
     "id": "ph2",
-    "title": "Key Monastery",
-    "src": "/images/photos/key.svg",
-    "collection": "Spiti",
-    "mode": "landscape",
+    "title": "Kalavantin steps",
+    "src": "/images/adventure/kalavantin.svg",
+    "collection": "Sahyadri",
+    "mode": "portrait",
     "favorite": true,
-    "location": "Spiti Valley",
-    "exif": {
-      "camera": "Sony A7C",
-      "lens": "16-35mm f/4",
-      "aperture": "f/11",
-      "shutter": "1/320s",
-      "iso": "200",
-      "focal": "24mm"
-    }
+    "location": "Raigad, Maharashtra"
   },
   {
     "id": "ph3",
-    "title": "Night Field",
-    "src": "/images/photos/stars.svg",
-    "collection": "Night",
-    "mode": "night",
-    "favorite": true,
-    "location": "Spiti",
-    "exif": {
-      "camera": "Sony A7C",
-      "lens": "20mm f/1.8",
-      "aperture": "f/1.8",
-      "shutter": "15s",
-      "iso": "3200",
-      "focal": "20mm"
-    }
+    "title": "Rajgad ridge",
+    "src": "/images/adventure/rajgad.svg",
+    "collection": "Sahyadri",
+    "mode": "landscape",
+    "location": "Pune district"
   },
   {
     "id": "ph4",
-    "title": "Trail Portrait",
-    "src": "/images/photos/portrait.svg",
-    "collection": "People",
-    "mode": "portrait",
-    "location": "Dharamshala",
-    "exif": {
-      "camera": "Sony A7C",
-      "lens": "85mm f/1.8",
-      "aperture": "f/2",
-      "shutter": "1/1000s",
-      "iso": "100",
-      "focal": "85mm"
-    }
+    "title": "Garbett monsoon",
+    "src": "/images/adventure/garbett.svg",
+    "collection": "Sahyadri",
+    "mode": "landscape",
+    "location": "Matheran hills"
   },
   {
     "id": "ph5",
-    "title": "Monsoon Green",
-    "src": "/images/photos/coorg.svg",
-    "collection": "Rain",
-    "mode": "landscape",
-    "location": "Coorg",
-    "exif": {
-      "camera": "Sony A7C",
-      "aperture": "f/5.6",
-      "shutter": "1/60s",
-      "iso": "400"
-    }
+    "title": "Gorakhgad pin",
+    "src": "/images/adventure/gorakhgad.svg",
+    "collection": "Sahyadri",
+    "mode": "portrait",
+    "location": "Near Murbad"
   },
   {
     "id": "ph6",
-    "title": "Desk Quiet",
-    "src": "/images/photos/desk.svg",
-    "collection": "Workspace",
-    "mode": "portrait",
-    "location": "Bengaluru",
-    "exif": {
-      "camera": "iPhone 15 Pro",
-      "aperture": "f/1.8",
-      "shutter": "1/40s",
-      "iso": "320"
-    }
+    "title": "Sagargad air",
+    "src": "/images/adventure/sagargad.svg",
+    "collection": "Konkan",
+    "mode": "landscape",
+    "location": "Alibag region"
   }
 ]

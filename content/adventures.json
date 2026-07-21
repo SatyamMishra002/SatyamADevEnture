@@ -1,66 +1,141 @@
 [
   {
     "id": "a1",
-    "slug": "triund-ridge",
-    "title": "Triund Ridge",
-    "place": "Dharamshala",
+    "slug": "jyotirlinga-yatra",
+    "title": "Eleven Lights — One Shore Remains",
+    "place": "Across India",
     "country": "India",
-    "date": "2025-04-12",
-    "cover": "/images/adventure/triund.svg",
+    "date": "2025-12-01",
+    "cover": "/images/adventure/jyotirlinga.svg",
     "gallery": [
-      "/images/adventure/triund-1.svg",
-      "/images/adventure/triund-2.svg",
-      "/images/adventure/triund-3.svg"
+      "/images/adventure/jyotirlinga.svg",
+      "/images/adventure/kedarnath.svg"
     ],
-    "journal": "Wind at the ridge felt like a clean compiler — stripping noise. We started before dawn, watched the Dhauladhar catch first light, and learned that the best conversations happen at slow altitudes.",
-    "lat": 32.249,
-    "lng": 76.348,
-    "elevation": "2,875 m",
+    "journal": "The Shiva Purana speaks of twelve Jyotirlingas — places where the infinite pillar of light is remembered in stone and ritual. I have stood in eleven of those courtyards. Each visit felt less like collecting stamps and more like recalibrating pace: queues at dawn, cold floors, the same mantra in different accents of India.\n\nSomnath’s sea wind, Kashi’s lane density, Trimbakeshwar’s Godavari quiet, Grishneshwar near Ellora’s carved silence, Bhimashankar’s forest approach — the geography changes; the vow stays simple. Show up. Walk in. Leave lighter.\n\nOne remains: Ramanathaswamy at Rameswaram — the southernmost of the twelve, tied to the Sethu and to patience. The yatra is not finished until that corridor is walked. That unfinished mile is intentional. Some goals should stay ahead of you.",
+    "lat": 9.2881,
+    "lng": 79.3174,
+    "elevation": "12 shrines · 11 done",
     "memories": [
-      "Tea with strangers who became trail friends",
-      "Clouds rolling below the ridge like soft code deploys",
-      "Silence that recalibrated everything"
+      "Eleven Jyotirlinga darshans completed",
+      "Rameswaram — Ramanathaswamy — still ahead",
+      "Pilgrimage as long-form discipline, not a checklist flex"
     ]
   },
   {
     "id": "a2",
-    "slug": "spiti-light",
-    "title": "Spiti Light",
-    "place": "Spiti Valley",
+    "slug": "kedarnath-trek",
+    "title": "Kedarnath",
+    "place": "Kedarnath, Uttarakhand",
     "country": "India",
-    "date": "2024-09-03",
-    "cover": "/images/adventure/spiti.svg",
+    "date": "2024-06-15",
+    "cover": "/images/adventure/kedarnath.svg",
     "gallery": [
-      "/images/adventure/spiti-1.svg",
-      "/images/adventure/spiti-2.svg"
+      "/images/adventure/kedarnath.svg",
+      "/images/adventure/kedarnath-2.svg"
     ],
-    "journal": "High desert geometry. Monasteries holding centuries. Roads that teach patience. Spiti is where photography stopped being about gear and became about waiting.",
-    "lat": 32.246,
-    "lng": 78.033,
-    "elevation": "4,270 m",
+    "journal": "Kedarnath sits in the Garhwal Himalaya as both Jyotirlinga and high pilgrimage — snow lines, Mandakini roar, and a stone temple that only opens for part of the year. The trek from Gaurikund is a long conversation with altitude: slow steps, shared tea, the decision to keep moving when lungs argue.\n\nAbove the noise of the trail, the shrine feels abrupt — grey stone against white peaks. It is not a casual weekend; it is a reminder that some systems (and some journeys) only run in season, and that preparation is respect.",
+    "lat": 30.7352,
+    "lng": 79.0669,
+    "elevation": "~3,583 m",
     "memories": [
-      "Golden hour at Key Monastery",
-      "Star fields that made the laptop feel small",
-      "Butter tea after a long dust day"
+      "Altitude that edits your ego",
+      "Temple season windows — nature’s deploy schedule",
+      "Silence that outlasts the crowd noise"
     ]
   },
   {
     "id": "a3",
-    "slug": "coorg-rain",
-    "title": "Coorg Rain",
-    "place": "Coorg",
+    "slug": "kalavantin-durga",
+    "title": "Kalavantin Durga",
+    "place": "Near Panvel, Raigad",
     "country": "India",
-    "date": "2024-07-19",
-    "cover": "/images/adventure/coorg.svg",
-    "gallery": [
-      "/images/adventure/coorg-1.svg"
-    ],
-    "journal": "Monsoon greens, coffee estates, and the kind of rain that forces rest. A soft reset between hard sprints.",
-    "lat": 12.337,
-    "lng": 75.806,
+    "date": "2024-11-10",
+    "cover": "/images/adventure/kalavantin.svg",
+    "gallery": ["/images/adventure/kalavantin.svg"],
+    "journal": "Kalavantin is a Sahyadri pinnacle near Prabalgad — roughly 686 m, famous for rock-cut steps that go near-vertical at the end. From Thakurwadi the path is honest: forest, Prabalmachi plateau, then the exposed climb where balance matters more than speed.\n\nNo romance about railings — there aren’t many. You earn the summit view of the Western Ghats one careful foothold at a time. It is the kind of trek that teaches focus the way production incidents do: stay present, or you slip.",
+    "lat": 18.971,
+    "lng": 73.228,
+    "elevation": "~686 m / 2,250 ft",
     "memories": [
-      "Mist on the plantation roads",
-      "Fireplace journaling"
+      "60° rock steps and a clear head",
+      "Prabalmachi as the calm before the pinnacle",
+      "Respect for height — optional fear, required attention"
+    ]
+  },
+  {
+    "id": "a4",
+    "slug": "rajgad-trek",
+    "title": "Rajgad",
+    "place": "Pune district, Maharashtra",
+    "country": "India",
+    "date": "2024-09-22",
+    "cover": "/images/adventure/rajgad.svg",
+    "gallery": ["/images/adventure/rajgad.svg"],
+    "journal": "Rajgad — “king of forts” — was capital ground for Chhatrapati Shivaji Maharaj for years. The massif rises around 1,376 m with machis (Padmavati, Suvela, Sanjeevani) and the Ballekilla crown. From Gunjavane the approach mixes forest trail and stone, then opens into ruins that feel like architecture designed for weather and war.\n\nWalking Rajgad is walking history with tired calves. The scale forces humility: empires needed high ground; engineers still do.",
+    "lat": 18.246,
+    "lng": 73.682,
+    "elevation": "~1,376 m / 4,512 ft",
+    "memories": [
+      "Fort sprawl that refuses a single photo",
+      "Wind on the machis",
+      "History underfoot, not behind glass"
+    ]
+  },
+  {
+    "id": "a5",
+    "slug": "garbett-plateau",
+    "title": "Garbett Plateau",
+    "place": "Matheran range, Maharashtra",
+    "country": "India",
+    "date": "2024-08-18",
+    "cover": "/images/adventure/garbett.svg",
+    "gallery": ["/images/adventure/garbett.svg"],
+    "journal": "Garbett Plateau sits in the Matheran hills — a wide green table after a Sahyadri climb, especially alive in monsoon mist. The trail trades technical rock for endurance and mud: longer rhythm, cooler air, views that arrive suddenly when clouds tear open.\n\nIt is less about a summit spike and more about arriving somewhere flat enough to breathe and look sideways at the ranges. Plateau walks recalibrate speed.",
+    "lat": 18.986,
+    "lng": 73.271,
+    "elevation": "Matheran hills",
+    "memories": [
+      "Monsoon greens and soft light",
+      "A summit that feels like a living room of grass",
+      "Mist as a feature, not a bug"
+    ]
+  },
+  {
+    "id": "a6",
+    "slug": "gorakhgad-trek",
+    "title": "Gorakhgad",
+    "place": "Near Murbad, Thane",
+    "country": "India",
+    "date": "2024-02-11",
+    "cover": "/images/adventure/gorakhgad.svg",
+    "gallery": ["/images/adventure/gorakhgad.svg"],
+    "journal": "Gorakhgad is a compact Sahyadri pin with rock-cut steps and caves tied to Nath tradition. The climb is short relative to Himalayan days, but the chimneys and holds demand the same attention as Kalavantin’s final metres.\n\nFrom the top, the Murbad landscape spreads quietly. These “small” Maharashtra forts are where weekend courage is practiced — so bigger days feel earned, not borrowed.",
+    "lat": 19.191,
+    "lng": 73.607,
+    "elevation": "Sahyadri pin",
+    "memories": [
+      "Rock chimneys and careful hands",
+      "Caves holding older silence",
+      "A Mumbai-accessible hard reset"
+    ]
+  },
+  {
+    "id": "a7",
+    "slug": "sagargad-trek",
+    "title": "Sagargad",
+    "place": "Alibag region, Raigad",
+    "country": "India",
+    "date": "2023-12-09",
+    "cover": "/images/adventure/sagargad.svg",
+    "gallery": ["/images/adventure/sagargad.svg"],
+    "journal": "Sagargad rises above the Alibag side of the Konkan — fort remnants, sea-facing air, and a trek that blends coastal humidity with Sahyadri stone. Compared with Himalayan approaches, it feels intimate: shorter logistics, still enough elevation to clear a work week.\n\nFrom the ridge you sense both forest and coastline. It is a reminder that adventure does not always require a flight — sometimes only a early start and respect for the hill.",
+    "lat": 18.641,
+    "lng": 72.872,
+    "elevation": "Konkan–Sahyadri",
+    "memories": [
+      "Sea breeze on a fort trail",
+      "Alibag logistics, mountain payoff",
+      "Weekends that actually restore"
     ]
   }
 ]
