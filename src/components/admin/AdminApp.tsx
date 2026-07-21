@@ -21,13 +21,12 @@ import {
 import { useAdminStore, uid } from "@/lib/admin-store";
 import {
   clearGithubToken,
+  clearStaleMediaQueue,
   getGithubToken,
-  getPendingMedia,
   githubPublishMeta,
   publishContentToGithub,
   setGithubToken,
-  addPendingMedia,
-  fileToPendingMedia,
+  uploadImageToGithub,
 } from "@/lib/github-publish";
 import { withBasePath } from "@/lib/paths";
 import type {
@@ -108,6 +107,7 @@ export function AdminApp({ seed }: { seed: Seed }) {
       localStorage.setItem(key, fingerprint);
     }
     setHydrated(true);
+    clearStaleMediaQueue();
   }, [seed]);
 
   if (!hydrated) {
@@ -637,8 +637,8 @@ function PhotosPanel() {
       }}
     >
       <p className="mb-6 text-sm text-text-muted">
-        Upload a photo here (works on phone), then open <strong className="text-text">Publish live</strong> so
-        visitors see it after Pages rebuilds (~1–2 min). Token required under Publish live.
+        Pick a photo from gallery — it compresses and uploads to GitHub right away (no storage quota).
+        Then tap <strong className="text-text">Publish live</strong> so the gallery list updates on the site (~1–2 min).
       </p>
       <EntityList
         items={photography.map((p) => ({
@@ -701,13 +701,8 @@ function PhotosPanel() {
                   setUploading(true);
                   setUploadError("");
                   try {
-                    if (!getGithubToken()) {
-                      throw new Error(
-                        "Save your GitHub token under Publish live first, then upload.",
-                      );
-                    }
-                    const { media, publicSrc } = await fileToPendingMedia(file);
-                    addPendingMedia(media);
+                    const { publicSrc, previewUrl } =
+                      await uploadImageToGithub(file);
                     setDraft({
                       ...draft,
                       src: publicSrc,
@@ -716,13 +711,14 @@ function PhotosPanel() {
                           ? file.name.replace(/\.[^.]+$/, "")
                           : draft.title,
                     });
-                    setPreview(URL.createObjectURL(file));
+                    setPreview(previewUrl);
                   } catch (err) {
                     setUploadError(
                       err instanceof Error ? err.message : "Upload failed",
                     );
                   } finally {
                     setUploading(false);
+                    e.target.value = "";
                   }
                 }}
               />
@@ -738,16 +734,14 @@ function PhotosPanel() {
               />
               <p className="font-mono truncate px-3 py-2 text-[11px] text-text-muted">
                 {draft.src || "No path yet"}
-                {getPendingMedia().some((m) =>
-                  draft.src.endsWith(m.path.replace(/^public/, "")),
-                )
-                  ? " · queued for Publish"
-                  : ""}
+                {draft.src ? " · uploaded to GitHub" : ""}
               </p>
             </div>
           )}
           {uploading && (
-            <p className="mt-3 text-sm text-text-muted">Preparing image…</p>
+            <p className="mt-3 text-sm text-text-muted">
+              Compressing & uploading to GitHub…
+            </p>
           )}
           {uploadError && <p className="mt-3 text-sm text-danger">{uploadError}</p>}
         </EditorSheet>
@@ -835,12 +829,7 @@ function PublishPanel() {
   const publish = async () => {
     setBusy(true);
     setError("");
-    const pending = getPendingMedia().length;
-    setStatus(
-      pending
-        ? `Publishing content + ${pending} photo(s) to GitHub…`
-        : "Publishing content to GitHub…",
-    );
+    setStatus("Publishing content to GitHub…");
     setCommitUrl("");
     try {
       if (!store.site) throw new Error("Site settings missing — save settings first.");
@@ -861,9 +850,7 @@ function PublishPanel() {
       store.log("publish", `github:${result.sha.slice(0, 7)}`);
       setCommitUrl(result.commitUrl);
       setStatus(
-        result.mediaCount
-          ? `Published ${result.mediaCount} photo(s) + content. Site updates in about 1–2 minutes.`
-          : "Published. GitHub Pages is rebuilding — live site updates in about 1–2 minutes.",
+        "Published. GitHub Pages is rebuilding — live site updates in about 1–2 minutes.",
       );
     } catch (e) {
       setError(e instanceof Error ? e.message : "Publish failed");
@@ -961,8 +948,7 @@ function PublishPanel() {
           </span>
         </p>
         <p className="mt-2 text-sm text-text-muted">
-          Photos waiting to publish:{" "}
-          <span className="text-text">{getPendingMedia().length}</span>
+          Photos upload instantly when you pick them. Publish updates the gallery list / other content.
         </p>
         <button
           type="button"
