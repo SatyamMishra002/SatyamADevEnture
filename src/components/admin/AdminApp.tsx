@@ -693,7 +693,6 @@ function PhotosPanel() {
               <input
                 type="file"
                 accept="image/*"
-                capture="environment"
                 className="mt-2 block w-full text-sm text-text"
                 disabled={uploading}
                 onChange={async (e) => {
