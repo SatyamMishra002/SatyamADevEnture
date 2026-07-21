@@ -9,7 +9,17 @@
     { "place": "Rajgad", "status": "done" }
   ],
   "placesVisited": [
+    { "name": "Somnath", "country": "India" },
+    { "name": "Mallikarjuna (Srisailam)", "country": "India" },
+    { "name": "Mahakaleshwar (Ujjain)", "country": "India" },
+    { "name": "Omkareshwar", "country": "India" },
+    { "name": "Baidyanath (Deoghar)", "country": "India" },
+    { "name": "Bhimashankar", "country": "India" },
+    { "name": "Nageshwar (Dwarka)", "country": "India" },
+    { "name": "Kashi Vishwanath", "country": "India" },
+    { "name": "Trimbakeshwar", "country": "India" },
     { "name": "Kedarnath", "country": "India" },
+    { "name": "Grishneshwar", "country": "India" },
     { "name": "Kalavantin Durga", "country": "India" },
     { "name": "Rajgad", "country": "India" },
     { "name": "Garbett Plateau", "country": "India" },
