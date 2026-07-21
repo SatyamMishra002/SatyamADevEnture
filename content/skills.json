@@ -1,16 +1,72 @@
 [
-  { "name": "Python", "category": "language", "level": 95 },
-  { "name": "FastAPI", "category": "framework", "level": 92 },
-  { "name": "Flask", "category": "framework", "level": 85 },
-  { "name": "Django", "category": "framework", "level": 82 },
-  { "name": "LangChain / RAG", "category": "ml", "level": 88 },
-  { "name": "FAISS", "category": "ml", "level": 86 },
-  { "name": "PyTorch", "category": "ml", "level": 80 },
-  { "name": "scikit-learn", "category": "ml", "level": 84 },
-  { "name": "LLM fine-tuning", "category": "ml", "level": 82 },
-  { "name": "Next.js / React", "category": "framework", "level": 75 },
-  { "name": "MySQL", "category": "tool", "level": 85 },
-  { "name": "Docker / AWS", "category": "tool", "level": 78 },
-  { "name": "Selenium automation", "category": "tool", "level": 88 },
-  { "name": "WebSockets", "category": "tool", "level": 80 }
+  {
+    "name": "Python",
+    "category": "language",
+    "level": 95
+  },
+  {
+    "name": "FastAPI",
+    "category": "framework",
+    "level": 92
+  },
+  {
+    "name": "Flask",
+    "category": "framework",
+    "level": 85
+  },
+  {
+    "name": "Django",
+    "category": "framework",
+    "level": 82
+  },
+  {
+    "name": "LangChain / RAG",
+    "category": "ml",
+    "level": 88
+  },
+  {
+    "name": "FAISS",
+    "category": "ml",
+    "level": 86
+  },
+  {
+    "name": "PyTorch",
+    "category": "ml",
+    "level": 80
+  },
+  {
+    "name": "scikit-learn",
+    "category": "ml",
+    "level": 84
+  },
+  {
+    "name": "LLM fine-tuning",
+    "category": "ml",
+    "level": 82
+  },
+  {
+    "name": "Next.js / React",
+    "category": "framework",
+    "level": 75
+  },
+  {
+    "name": "MySQL",
+    "category": "tool",
+    "level": 85
+  },
+  {
+    "name": "Docker / AWS",
+    "category": "tool",
+    "level": 78
+  },
+  {
+    "name": "Selenium automation",
+    "category": "tool",
+    "level": 88
+  },
+  {
+    "name": "WebSockets",
+    "category": "tool",
+    "level": 80
+  }
 ]

@@ -7,7 +7,11 @@
     "cover": "/images/blog/calm-apis.svg",
     "date": "2025-10-01",
     "category": "Engineering",
-    "tags": ["RAG", "FastAPI", "LLMs"],
+    "tags": [
+      "RAG",
+      "FastAPI",
+      "LLMs"
+    ],
     "readingTime": "6 min",
     "status": "published",
     "featured": true,
@@ -20,7 +24,10 @@
     "excerpt": "Kalavantin’s steps and a failing deploy share a lesson: panic makes you slip. Pace is a skill.",
     "date": "2025-06-01",
     "category": "Essay",
-    "tags": ["Adventure", "Mindset"],
+    "tags": [
+      "Adventure",
+      "Mindset"
+    ],
     "readingTime": "4 min",
     "status": "published",
     "featured": true,

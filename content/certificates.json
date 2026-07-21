@@ -5,7 +5,11 @@
     "issuer": "Euron",
     "date": "2024-01-01",
     "image": "/images/certs/ml-spec.svg",
-    "skills": ["Generative AI", "LLMs", "Applied AI"]
+    "skills": [
+      "Generative AI",
+      "LLMs",
+      "Applied AI"
+    ]
   },
   {
     "id": "c2",
@@ -13,7 +17,11 @@
     "issuer": "iNeuron",
     "date": "2023-01-01",
     "image": "/images/certs/dlnd.svg",
-    "skills": ["Python", "Data Analysis", "Pandas"]
+    "skills": [
+      "Python",
+      "Data Analysis",
+      "Pandas"
+    ]
   },
   {
     "id": "c3",
@@ -21,7 +29,11 @@
     "issuer": "Udemy",
     "date": "2023-01-01",
     "image": "/images/certs/aws-cp.svg",
-    "skills": ["Power BI", "Dashboards", "Analytics"]
+    "skills": [
+      "Power BI",
+      "Dashboards",
+      "Analytics"
+    ]
   },
   {
     "id": "c4",
@@ -29,6 +41,9 @@
     "issuer": "Udemy",
     "date": "2022-01-01",
     "image": "/images/certs/fastapi.svg",
-    "skills": ["Python", "Programming Fundamentals"]
+    "skills": [
+      "Python",
+      "Programming Fundamentals"
+    ]
   }
 ]

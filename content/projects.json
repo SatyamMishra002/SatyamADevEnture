@@ -15,8 +15,14 @@
     "year": 2025,
     "role": "Solo engineer",
     "timeline": [
-      { "label": "Prototype", "date": "2025" },
-      { "label": "Public repo", "date": "2025" }
+      {
+        "label": "Prototype",
+        "date": "2025"
+      },
+      {
+        "label": "Public repo",
+        "date": "2025"
+      }
     ],
     "problem": "Teams need answers from their own documents — not generic chat that hallucinates policy or process.",
     "motivation": "I wanted a clean personal sandbox for RAG: ingest → embed → retrieve → answer, so enterprise lessons stayed sharp outside office codebases.",
@@ -39,12 +45,27 @@
       "Multi-collection routing"
     ],
     "stats": [
-      { "label": "GitHub ★", "value": "4" },
-      { "label": "Focus", "value": "RAG" }
+      {
+        "label": "GitHub ★",
+        "value": "4"
+      },
+      {
+        "label": "Focus",
+        "value": "RAG"
+      }
     ],
-    "tech": ["Python", "RAG", "Embeddings", "Semantic Search"],
+    "tech": [
+      "Python",
+      "RAG",
+      "Embeddings",
+      "Semantic Search"
+    ],
     "github": "https://github.com/SatyamMishra002/GenAi_chatbot",
-    "tags": ["AI", "RAG", "Personal"]
+    "tags": [
+      "AI",
+      "RAG",
+      "Personal"
+    ]
   },
   {
     "id": "p2",
@@ -53,13 +74,18 @@
     "subtitle": "Resume-aware practice rounds with feedback and scoring",
     "summary": "Upload a résumé, practice personalized interview rounds, and get instant feedback — a personal product experiment in applied LLMs for career prep.",
     "cover": "/images/projects/signalboard.svg",
-    "gallery": ["/images/projects/signalboard.svg"],
+    "gallery": [
+      "/images/projects/signalboard.svg"
+    ],
     "status": "published",
     "featured": true,
     "year": 2025,
     "role": "Solo engineer",
     "timeline": [
-      { "label": "Build", "date": "2025" }
+      {
+        "label": "Build",
+        "date": "2025"
+      }
     ],
     "problem": "Interview prep is generic. Candidates need questions shaped by their actual résumé and role target.",
     "motivation": "Apply conversational AI beyond internal ops — help people rehearse with structure and scoring.",
@@ -79,12 +105,26 @@
       "Domain packs (backend, ML, finance)"
     ],
     "stats": [
-      { "label": "Type", "value": "Personal" },
-      { "label": "Stack", "value": "Python + LLM" }
+      {
+        "label": "Type",
+        "value": "Personal"
+      },
+      {
+        "label": "Stack",
+        "value": "Python + LLM"
+      }
     ],
-    "tech": ["Python", "LLMs", "Resume parsing"],
+    "tech": [
+      "Python",
+      "LLMs",
+      "Resume parsing"
+    ],
     "github": "https://github.com/SatyamMishra002/AI_Mock_Interviewer",
-    "tags": ["AI", "Product", "Personal"]
+    "tags": [
+      "AI",
+      "Product",
+      "Personal"
+    ]
   },
   {
     "id": "p3",
@@ -93,14 +133,22 @@
     "subtitle": "Account Aggregator dashboard with grounded financial Q&A",
     "summary": "At Parag Parikh: full-stack wealth dashboard over AA APIs, unified multi-asset views, and a RAG chatbot (LangChain, FAISS, Qwen-13B) for relationship managers.",
     "cover": "/images/projects/scrapecraft.svg",
-    "gallery": ["/images/projects/scrapecraft-1.svg"],
+    "gallery": [
+      "/images/projects/scrapecraft-1.svg"
+    ],
     "status": "published",
     "featured": true,
     "year": 2025,
     "role": "Assistant Manager – Python Developer",
     "timeline": [
-      { "label": "Architecture", "date": "2025" },
-      { "label": "Production use", "date": "2025–Present" }
+      {
+        "label": "Architecture",
+        "date": "2025"
+      },
+      {
+        "label": "Production use",
+        "date": "2025–Present"
+      }
     ],
     "problem": "Client wealth data lived across statements and asset classes. RMs needed consent-safe aggregation and natural-language answers without manual spreadsheet archaeology.",
     "motivation": "Bring Account Aggregator data and conversational AI into one calm operational surface.",
@@ -123,12 +171,35 @@
       "Deeper alerting on portfolio change narratives"
     ],
     "stats": [
-      { "label": "LLM", "value": "Qwen-13B" },
-      { "label": "Retrieval", "value": "FAISS" },
-      { "label": "API", "value": "Account Aggregator" }
+      {
+        "label": "LLM",
+        "value": "Qwen-13B"
+      },
+      {
+        "label": "Retrieval",
+        "value": "FAISS"
+      },
+      {
+        "label": "API",
+        "value": "Account Aggregator"
+      }
     ],
-    "tech": ["Next.js", "React", "FastAPI", "LangChain", "Qwen-13B", "FAISS", "MySQL", "Docker"],
-    "tags": ["AI", "FinTech", "RAG", "Work"]
+    "tech": [
+      "Next.js",
+      "React",
+      "FastAPI",
+      "LangChain",
+      "Qwen-13B",
+      "FAISS",
+      "MySQL",
+      "Docker"
+    ],
+    "tags": [
+      "AI",
+      "FinTech",
+      "RAG",
+      "Work"
+    ]
   },
   {
     "id": "p4",
@@ -143,8 +214,14 @@
     "year": 2025,
     "role": "Python Developer",
     "timeline": [
-      { "label": "Build", "date": "Dec 2024" },
-      { "label": "Iterate", "date": "2025" }
+      {
+        "label": "Build",
+        "date": "Dec 2024"
+      },
+      {
+        "label": "Iterate",
+        "date": "2025"
+      }
     ],
     "problem": "Support teams needed faster, document-aware answers inside the ticketing flow — not a separate knowledge wiki nobody opens.",
     "motivation": "Put RAG where the work already happens: tickets, live chat, and admin-managed corpora.",
@@ -167,10 +244,27 @@
       "Tighter coupling between feedback and retraining cadence"
     ],
     "stats": [
-      { "label": "Model", "value": "7B FT" },
-      { "label": "Chat", "value": "WebSockets" }
+      {
+        "label": "Model",
+        "value": "7B FT"
+      },
+      {
+        "label": "Chat",
+        "value": "WebSockets"
+      }
     ],
-    "tech": ["FastAPI", "PyTorch", "FAISS", "WebSockets", "scikit-learn", "JavaScript"],
-    "tags": ["AI", "RAG", "Work"]
+    "tech": [
+      "FastAPI",
+      "PyTorch",
+      "FAISS",
+      "WebSockets",
+      "scikit-learn",
+      "JavaScript"
+    ],
+    "tags": [
+      "AI",
+      "RAG",
+      "Work"
+    ]
   }
 ]
